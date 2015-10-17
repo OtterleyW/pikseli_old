@@ -1,0 +1,652 @@
+
+@import url(http://fonts.googleapis.com/css?family=Berkshire+Swash);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+@import url(http://fonts.googleapis.com/css?family=Dosis);
+@import url(http://fonts.googleapis.com/css?family=Homemade+Apple);
+
+*{
+	box-sizing: border-box;
+}
+
+a {
+	 text-decoration: none;
+	color: #31460E;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+body {
+	background-color: #7C8A50;
+	font-family:'Titillium Web',sans-serif;
+	font-size: 15px;
+	text-align:justify;
+	line-height:1.8;
+	margin:0;
+
+}
+
+#layout{
+		width: 1260px;
+		margin:0 auto;
+}
+
+header {
+	height: 350px;
+	background-image: url(img/hukkisotsikko.jpg);
+	border: 1px solid hsla(0, 0%, 27%, 0.62);
+	border-top: 0px;
+	-webkit-box-shadow: 2px 11px 67px 19px rgba(0,0,0,0.55);
+	-moz-box-shadow: 2px 11px 67px 19px rgba(0,0,0,0.55);
+	box-shadow: 2px 11px 67px 19px rgba(0,0,0,0.55);
+}
+
+nav {
+	margin-left: -10px;
+	width:1280px;
+	background: rgba(204,222,104,1);
+	background: -moz-linear-gradient(top, rgba(204,222,104,1) 0%, rgba(164,179,87,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(204,222,104,1)), color-stop(100%, rgba(164,179,87,1)));
+	background: -webkit-linear-gradient(top, rgba(204,222,104,1) 0%, rgba(164,179,87,1) 100%);
+	background: -o-linear-gradient(top, rgba(204,222,104,1) 0%, rgba(164,179,87,1) 100%);
+	background: -ms-linear-gradient(top, rgba(204,222,104,1) 0%, rgba(164,179,87,1) 100%);
+	background: linear-gradient(to bottom, rgba(204,222,104,1) 0%, rgba(164,179,87,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccde68', endColorstr='#a4b357', GradientType=0 );
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid hsla(0, 0%, 27%, 0.62);
+	-webkit-box-shadow: 2px 11px 67px 19px rgba(0,0,0,0.55);
+	-moz-box-shadow: 2px 11px 67px 19px rgba(0,0,0,0.55);
+	box-shadow: 2px 11px 67px 19px rgba(0,0,0,0.55);
+	border-top:0px;
+	border-bottom: 0px;
+}
+
+
+nav ul {
+	list-style: none;
+	text-align: center;
+	padding: 0;
+	margin:0 auto;
+	overflow: auto;
+	width: 50%;
+}
+
+nav li {
+	font-family: 'Dosis', sans-serif;
+	font-size: 28px;
+	text-transform: uppercase;
+	color: #31460E;
+	line-height: 50px;
+	height: 50px;
+	width: 150px;
+	float: left;
+}
+ 
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+nav a:hover {
+ background-color: hsla(69, 79%, 90%, 0.4);
+ text-decoration: none;
+}
+
+
+#alaosa{
+	width: 100%;
+	background-color: #E4E4C5;
+	border: 1px solid hsla(0, 0%, 27%, 0.62);
+	border-bottom: 0px;
+	-webkit-box-shadow: 2px 11px 67px 19px rgba(0,0,0,0.55);
+	-moz-box-shadow: 2px 11px 67px 19px rgba(0,0,0,0.55);
+	box-shadow: 2px 11px 67px 19px rgba(0,0,0,0.55);
+	border: 0px solid #000000;
+}
+
+section {
+	
+	min-height: 300px;
+	padding: 25px;
+	padding-right: 100px;
+	padding-left: 100px;
+}
+
+.allekirjoitus{
+	font-family: 'Homemade Apple', cursive; 
+	font-size:18px;
+	color: #31460E;
+}
+
+.koukero{
+	display: block;
+	  margin-left: auto;
+	  margin-right: auto
+}
+
+
+footer{
+	font-family: 'Dosis', sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #31460E;
+	text-align: center;
+	padding: 15px;
+}
+
+h1{
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	text-transform: uppercase;
+	font-size: 26px;
+	border-bottom: 1px dashed #31460E;
+	margin-bottom: 50px;
+}
+
+h2{
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	text-transform: uppercase;
+	font-size: 24px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+
+h3{
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	font-size: 20px;
+}
+
+h4{
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	font-size: 16px;
+	margin-bottom: 0px;
+}
+
+
+.koristekuva{
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-webkit-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	border: 1px solid hsla(74, 27%, 43%, 1);
+	margin: 10px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.hevoslistaus {
+	background:url(http://colourlovers.com.s3.amazonaws.com/images/patterns/4766/4766123.png);
+	width: 100%;
+	border-spacing: 0px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid hsla(74, 27%, 43%, 1);
+	overflow: hidden;
+	-webkit-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	margin-bottom: 50px;
+}
+
+.hevoslistaus th{
+	background: rgba(204,222,104,1);
+	background: -moz-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(204,222,104,0.9)), color-stop(100%, rgba(164,179,87,0.9)));
+	background: -webkit-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -o-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -ms-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: linear-gradient(to bottom, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccde68', endColorstr='#a4b357', GradientType=0 );
+	padding: 8px;
+	padding-left: 10px;
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size:1.1em;
+	letter-spacing: 1.5px;
+	border-bottom: 1px solid hsla(74, 27%, 43%, 1);
+}
+
+.hevoslistaus td{
+	padding: 8px;
+	padding-left: 15px;
+	background-color:hsla(53, 70%, 91%, 0.9);
+	border-bottom: 1px dashed hsla(74, 27%, 43%, 0.5);
+}
+
+.hevoslistaus td.nimi{
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#ilmoitustaulu{
+	background: url(http://colourlovers.com.s3.amazonaws.com/images/patterns/4766/4766123.png);
+	margin: 0 auto;
+	margin-top: 100px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid hsla(74, 27%, 43%, 1);
+	overflow: hidden;
+	-webkit-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	margin-bottom: 50px;
+}
+
+#ilmoitustaulu table{
+    text-align: center;
+    border: 0px;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+#ilmoitustaulu tr{
+	background-color: hsla(60, 36%, 83%, 0.9);
+	padding: 0px;
+	border: 0px;
+
+}
+
+#ilmoitustaulu td{
+	padding: 25px;
+	border: 0px;
+}
+
+#ilmoitustaulu h2{
+	font-size: 22px;
+	margin: 15px;
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+#ilmoitustaulu td.ilmo{
+	vertical-align: top;
+	text-align: left;
+	line-height: 35px;
+}
+
+#ilmoitustaulu ul{
+	list-style-type: circle;
+}
+
+.hahmot td{
+	padding-right: 50px;
+	width: 50%;
+	vertical-align: top;
+}
+
+.hahmot img{
+	margin-right: 25px;
+}
+
+hr{
+	border: 0;
+	border-bottom: 1px dashed #31460E;
+	height: 1px;
+	margin: 25px;
+
+}
+
+.myyntisuku {
+	float: right;
+	margin-left: 25px;
+	background:url(http://colourlovers.com.s3.amazonaws.com/images/patterns/4766/4766123.png);
+	border-spacing: 0px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid hsla(74, 27%, 43%, 1);
+	overflow: hidden;
+	-webkit-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.5);
+	-moz-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.5);
+	box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.5);
+	margin-bottom: 50px;
+	width: 45%;
+}
+
+.myyntisuku tr{
+	background: rgba(204,222,104,1);
+	background: -moz-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(204,222,104,0.9)), color-stop(100%, rgba(164,179,87,0.9)));
+	background: -webkit-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -o-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -ms-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: linear-gradient(to bottom, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccde68', endColorstr='#a4b357', GradientType=0 );
+}
+.myyntisuku td{
+	padding: 8px;
+	padding-left: 10px;
+	padding: 6px 18px;
+	border-bottom: 1px solid hsla(74, 27%, 43%, 1);
+	border-right: 1px solid hsla(74, 27%, 43%, 1);
+}
+/* HEVOSEN ULKOASU */
+
+.perustiedot {
+	background:url(http://colourlovers.com.s3.amazonaws.com/images/patterns/4766/4766123.png);
+	width: 100%;
+	border-spacing: 0px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid hsla(74, 27%, 43%, 1);
+	overflow: hidden;
+	-webkit-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.5);
+	-moz-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.5);
+	box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.5);
+	margin-bottom: 50px;
+}
+
+.perustiedot td {
+	padding: 8px;
+	padding-left: 10px;
+	background-color:hsla(53, 70%, 91%, 0.9);
+	border-bottom: 1px dashed hsla(74, 27%, 43%, 0.5);
+}
+
+
+.perustiedot td.tieto {
+	background: rgba(204,222,104,1);
+	background: -moz-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(204,222,104,0.9)), color-stop(100%, rgba(164,179,87,0.9)));
+	background: -webkit-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -o-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -ms-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: linear-gradient(to bottom, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccde68', endColorstr='#a4b357', GradientType=0 );
+	padding: 8px;
+	padding-left: 10px;
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size:1.1em;
+	letter-spacing: 1.5px;
+	border-bottom: 1px solid hsla(74, 27%, 43%, 1);
+	border-right: 1px solid hsla(74, 27%, 43%, 1);
+	text-align: right;
+	padding-right: 20px;
+}
+
+.kuva {
+	text-align: center;
+}
+
+.hevoskuva{
+	box-shadow: 1px 1px 5px hsla(0, 0%, 0%, 0.5);
+	height: 300px;
+}
+
+.galleriakuva{
+	height: 100px;
+	box-shadow: 1px 1px 5px hsla(0, 0%, 0%, 0.5);
+	margin: 5px;
+}
+
+.copyteksti{
+	width:100%;
+	text-align: right;
+	font-size: 12px;
+}
+
+.sukutaulu{
+		background:url(http://colourlovers.com.s3.amazonaws.com/images/patterns/4766/4766123.png);
+		width: 100%;
+		border-spacing: 0px;
+		border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		border: 1px solid hsla(74, 27%, 43%, 1);
+		overflow: hidden;
+		-webkit-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.5);
+		-moz-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.5);
+		box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.5);
+		margin-bottom: 50px;
+}
+
+.sukutaulu tr{
+	background: rgba(204,222,104,1);
+	background: -moz-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(204,222,104,0.9)), color-stop(100%, rgba(164,179,87,0.9)));
+	background: -webkit-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -o-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -ms-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: linear-gradient(to bottom, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccde68', endColorstr='#a4b357', GradientType=0 );
+}
+.sukutaulu td{
+	padding: 8px;
+	padding-left: 10px;
+	padding: 6px 18px;
+	border-bottom: 1px solid hsla(74, 27%, 43%, 1);
+	border-right: 1px solid hsla(74, 27%, 43%, 1);
+}
+
+.hepannimi {
+	font-family: 'Dosis', sans-serif;
+	color:#31460E;
+	letter-spacing: 1.2px;
+}
+
+.hepannimi a{
+	font-weight: bold;
+}
+
+/* Normaalit kilpailut */
+
+.kilpailut {
+	background:url(http://colourlovers.com.s3.amazonaws.com/images/patterns/4766/4766123.png);
+	width: 100%;
+	border-spacing: 0px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid hsla(74, 27%, 43%, 1);
+	overflow: hidden;
+	-webkit-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	margin-bottom: 50px;
+}
+
+.kilpailut th{
+	background: rgba(204,222,104,1);
+	background: -moz-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(204,222,104,0.9)), color-stop(100%, rgba(164,179,87,0.9)));
+	background: -webkit-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -o-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -ms-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: linear-gradient(to bottom, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccde68', endColorstr='#a4b357', GradientType=0 );
+	padding: 8px;
+	padding-left: 10px;
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size:1.1em;
+	letter-spacing: 1.5px;
+	border-bottom: 1px solid hsla(74, 27%, 43%, 1);
+	text-align: center;
+}
+
+.kilpailut td{
+	padding: 8px;
+	padding-left: 10px;
+	background-color:hsla(53, 70%, 91%, 0.9);
+	max-height: 200px;
+	overflow: hidden;
+	padding: 20px;
+	width: 50%;
+}
+
+.kilpailut td.saavutukset{
+	vertical-align: top;
+	background-color:hsla(53, 70%, 91%, 0.9);
+}
+
+
+
+.kilpailut div.sijoitukset {
+	max-height: 350px;
+	overflow: auto;
+	margin-left: 25px;
+}
+
+/* Porrastetut kilpailut */
+.porrastetutkilpailut {
+	background:url(http://colourlovers.com.s3.amazonaws.com/images/patterns/4766/4766123.png);
+	width: 100%;
+	border-spacing: 0px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid hsla(74, 27%, 43%, 1);
+	overflow: hidden;
+	-webkit-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	margin-bottom: 50px;
+}
+
+.porrastetutkilpailut th{
+	background: rgba(204,222,104,1);
+	background: -moz-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(204,222,104,0.9)), color-stop(100%, rgba(164,179,87,0.9)));
+	background: -webkit-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -o-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -ms-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: linear-gradient(to bottom, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccde68', endColorstr='#a4b357', GradientType=0 );
+	padding: 20px;
+	padding-left: 10px;
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size:1.1em;
+	letter-spacing: 1.5px;
+	border-bottom: 1px solid hsla(74, 27%, 43%, 1);
+	text-align: center;
+}
+
+.porrastetutkilpailut tr{
+	background: rgba(248,244,216,1);
+	background: -moz-linear-gradient(top, rgba(248,244,216,1) 0%, rgba(248,244,216,0.98) 3%, rgba(204,222,104,0.5) 69%, rgba(204,222,104,0.28) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248,244,216,1)), color-stop(3%, rgba(248,244,216,0.98)), color-stop(69%, rgba(204,222,104,0.5)), color-stop(100%, rgba(204,222,104,0.28)));
+	background: -webkit-linear-gradient(top, rgba(248,244,216,1) 0%, rgba(248,244,216,0.98) 3%, rgba(204,222,104,0.5) 69%, rgba(204,222,104,0.28) 100%);
+	background: -o-linear-gradient(top, rgba(248,244,216,1) 0%, rgba(248,244,216,0.98) 3%, rgba(204,222,104,0.5) 69%, rgba(204,222,104,0.28) 100%);
+	background: -ms-linear-gradient(top, rgba(248,244,216,1) 0%, rgba(248,244,216,0.98) 3%, rgba(204,222,104,0.5) 69%, rgba(204,222,104,0.28) 100%);
+	background: linear-gradient(to bottom, rgba(248,244,216,1) 0%, rgba(248,244,216,0.98) 3%, rgba(204,222,104,0.5) 69%, rgba(204,222,104,0.28) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f4d8', endColorstr='#ccde68', GradientType=0 );
+}
+
+.porrastetutkilpailut td{
+	padding: 8px;
+	padding-left: 10px;
+	background-color:hsla(53, 70%, 91%, 0.9);
+	max-height: 200px;
+	border-bottom: 1px solid hsla(74, 27%, 43%, 0.5);
+}
+
+.porrastetutkilpailut td.saavutukset{
+	width: 45%;
+	vertical-align: top;
+	padding: 20px;
+	background-color:hsla(53, 70%, 91%, 0.9);
+	border-left: 1px solid hsla(74, 27%, 43%, 0.5);
+}
+
+.porrastetutkilpailut td.laji{
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	font-weight: bold;
+	border-left: 1px solid hsla(74, 27%, 43%, 0.5);
+	border-right: 1px solid hsla(74, 27%, 43%, 0.5);
+	background: rgba(204,222,104,1);
+	background: -moz-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(204,222,104,0.9)), color-stop(100%, rgba(164,179,87,0.9)));
+	background: -webkit-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -o-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -ms-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: linear-gradient(to bottom, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccde68', endColorstr='#a4b357', GradientType=0 );
+}
+
+.porrastetutkilpailut td.ominaisuus{
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	font-weight: bold;
+}
+
+.taso{
+	font-weight: bold;
+	color:#31460E;
+	border-right: 1px dashed hsla(74, 27%, 43%, 0.5);
+}
+
+
+
+.paivakirja {
+	background:url(http://colourlovers.com.s3.amazonaws.com/images/patterns/4766/4766123.png);
+	width: 100%;
+	border-spacing: 0px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid hsla(74, 27%, 43%, 1);
+	overflow: hidden;
+	-webkit-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	box-shadow: 1px 3px 23px 1px rgba(0,0,0,0.75);
+	margin-bottom: 50px;
+}
+
+.paivakirja tr.otsikko{
+	background: rgba(204,222,104,1);
+	background: -moz-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(204,222,104,0.9)), color-stop(100%, rgba(164,179,87,0.9)));
+	background: -webkit-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -o-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: -ms-linear-gradient(top, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	background: linear-gradient(to bottom, rgba(204,222,104,0.9) 0%, rgba(164,179,87,0.9) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccde68', endColorstr='#a4b357', GradientType=0 );
+	color:#31460E;
+	font-family: 'Dosis', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size:1.1em;
+	letter-spacing: 1.5px;
+}
+
+.paivakirja td{
+	padding: 20px;
+}
+
+.paivakirja td.tiedot{
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.paivakirja td.teksti{
+	background-color:hsla(53, 70%, 91%, 0.9);
+	border-top: 1px solid hsla(74, 27%, 43%, 1);
+	border-bottom: 1px solid hsla(74, 27%, 43%, 1);
+}
