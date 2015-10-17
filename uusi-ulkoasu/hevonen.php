@@ -186,58 +186,79 @@
 
 			<h2>Sukutaulu ja jälkeläiset</h2>
 			
-				<table class="suku">
-				<tr>
-						<td rowspan="8">i. </td>
-						<td rowspan="4">ii. </td>
-						<td rowspan="2">iii. </td>
-						<td rowspan="1">iiii. </td>
-						<tr>
-							<td rowspan="1">iiie. </td>
-						</tr>
-						<td rowspan="2">iie. </td>
-						<td rowspan="1">iiei. </td>
-						<tr>
-							<td rowspan="1">iiee. </td>
-						</tr>
-						<td rowspan="4">ie. </td>
-						<td rowspan="2">iei. </td>
-						<td rowspan="1">ieii. </td>
-						<tr>
-							<td rowspan="1">ieie. </td>
-						</tr>
-						<td rowspan="2">iee. </td>
-						<td rowspan="1">ieei. </td>
-						<tr>
-							<td rowspan="1">ieee. </td>
-						</tr>
-					</tr>
-					<tr>
-						<td rowspan="8">e. </td>
-						<td rowspan="4">ei. </td>
-						<td rowspan="2">eii. </td>
-						<td rowspan="1">eiii. </td>
-						<tr>
-							<td rowspan="1">eiie. </td>
-						</tr>
-						<td rowspan="2">eie. </td>
-						<td rowspan="1">eiei. </td>
-						<tr>
-							<td rowspan="1">eiee. </td>
-						</tr>
-						<td rowspan="4">ee. </td>
-						<td rowspan="2">eei. </td>
-						<td rowspan="1">eeii. </td>
-						<tr>
-							<td rowspan="1">eeie. </td>
-						</tr>
-						<td rowspan="2">eee. </td>
-						<td rowspan="1">eeei. </td>
-						<tr>
-							<td rowspan="1">eeee. </td>
-						</tr>
-					</tr>
-				</table>
+				
+<?php
+
+
+function tayta_sukulaisrivit($heppa, &$koko_suku, $polvi_str) {
+	$rivi = &$koko_suku[count($koko_suku) - 1];
+	$rivi[] = array($heppa, $polvi_str);
+	if (isset($heppa->isa)) {
+		tayta_sukulaisrivit($heppa->isa, $koko_suku, $polvi_str . "i");
+	}
+	if (isset($heppa->ema)) {
+		$koko_suku[] = array();
+		tayta_sukulaisrivit($heppa->ema, $koko_suku, $polvi_str . "e");
+	}
+}
+
+$koko_suku = array(array());
+tayta_sukulaisrivit($tama_heppa->isa, $koko_suku, "i");
+$koko_suku[] = array();
+tayta_sukulaisrivit($tama_heppa->ema, $koko_suku, "e");
+
+//Hevosen tietojen muotoilu sukutaulua varten
+function lisaa_sukulainen($heppa, $rowspan){
+	if(!isset($heppa->id)){
+		return 'tuntematon';
+	}
+	
+	$str = '<span class="hepannimi">'.$heppa->nimi.'</span>';
+
+	if($heppa->url != ""){
+		$str = '<span class="hepannimi"><a href="'.$heppa->url.'" target="_blank">'.$heppa->nimi.'</a></span>';
+	}
+
+	if($heppa->status != "" && $heppa->status != "kuollut" ){
+		$str = $str." <small>(".$heppa->status.")</small>";
+	}
+
+
+	if($rowspan >2){
+		if($heppa->rotu_lyhenne != ""){
+			$str = $str."<br /><small>".$heppa->rotu_lyhenne."-".$heppa->sukupuoli.", ".$heppa->saka."cm, ".$heppa->vari."</small>";
+		}
+	}
+
+	if($heppa->meriitit != ""){
+		$str = $str."<br /><small>".$heppa->meriitit.'</small>';
+	}
+	return $str;
+}
+?>
+						
+<table class="suku">
+
+<?php foreach($koko_suku as $suku_rivi): ?>
+
+	<tr>
+
+	<?php foreach($suku_rivi as $i => $heppa_info): ?>
+		<?php
+			$heppa = $heppa_info[0];
+			$polvi_str = $heppa_info[1];
+			$rowspan = pow(2, (count($suku_rivi) - $i - 1));
+		?>
+
+		<td rowspan="<?= $rowspan ?>"><b><?= $polvi_str . "." ?></b> <?= lisaa_sukulainen($heppa, $rowspan) ?></td>
+
+	<?php endforeach; ?>
+
+	</tr>
+
+<?php endforeach; ?>
+
+</table>
 			</div>
 
 			<div class="varsat container">
