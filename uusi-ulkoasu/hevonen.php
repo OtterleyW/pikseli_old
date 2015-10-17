@@ -112,10 +112,10 @@
 			<h1><?=$tama_heppa->nimi?></h1>
 			<span class="virtuaalihevonen">tämä on virtuaalihevonen - this is a sim-game horse</span>
 
-			<div class="perustiedot container">
+			<div class="perustiedot">
 				<div class="tietoboksi row">
 					<div class="kuva">
-						<img src="../../img/h/blackette.jpg" />
+						<a href="http://www.salaovi.net/hukkapuro/img/h/<?=$isokuva['osoite']?>" target="_blank"><img src="http://www.salaovi.net/hukkapuro/img/h/<?=$isokuva['osoite']?>" class="hevoskuva"></a> 
 					</div>
 
 					<div class="perustietolaatikko">
@@ -172,17 +172,18 @@
 				</div>
 
 			
-			<div class="luonne container">
-				<p>Mich on varsinainen hurmuri, jolta löytyy machomiehen elkeiden lisäksi myös herkempikin puoli. Ihmisten seurassa aina sävyisästi käyttäytyvä ori on helppo käsitellä lähes tilanteessa kuin tilanteessa. Ainoastaan eläinlääkärin vierailut saavat orin yrittämään konnankoukkuja, mutta silloinkin napakka käsittelijä saa orin sietämään ikävämpiäkin toimenpiteitä. Kun ihmisiä ei ole tiellä, löytyy Michistä myös se tulinen ori, joka näyttää kilpailijoille taivaanmerkit, ja joka hurmaa tammoja kuin viimeistä päivää. Niinpä Michin tarha- ja laidunkavereita valitessa saakin olla tarkkana, eikä pidä hämääntyä orin herrasmiesmäisestä käytöksestä ihmisten kanssa.</p>
+			<div class="luonne">
+				<?
+					$tama_heppa->luonne = preg_replace('/\n/', '</p><p>',$tama_heppa->luonne);
+					$tama_heppa->luonne = "<p>{$tama_heppa->luonne}</p>";
 
-				<p>Ratsastettaessa Mich on kärsivällinen ja rauhallinen. Orin selkään voi päästää jopa aloittelevan ratsastajan, sillä ori tuskin hermostuu hieman huojuvasta istunnasta tai epävarmoista avuista. Sen sijaan Mich osaa kyllä luistaa työnteosta ja ori tekeekin vain ja ainoastaan sen, mitä siltä vaaditaan, eikä mitään ylimääräistä. Niinpä Michin selkään onkin laitettava kokenut, osaava ja jämäkkä ratsastaja, jotta orista saa tuotua esiin kaiken sen potentiaalin.</p>
-
-				<p>Esteillä Mich on täysi vitsi. Maahantuojan sanoin ori on ” esteillä kömpelö ja kolauttelee puomeja ihan sävelmään saakka”. Ori ei innostu esteistä millään tavalla, eikä sillä tunnu olevan kauheasti motivaatiota hypätä, joten mielenvirkistyksesi Michin kanssa soveltuu ennemmin maastoseikkailu kuin puomi- tai estetyöskentely. Maastossa Mich on rauhallinen ja varma tosin vieraita asioita ori saattaa aluksi hieman kytätä. Reippaan ratsastajan kanssa näistäkin hirvityksistä päästään kuitenkin yleensä sujuvasti ohi.</p>
-
-				<p>Kilpailuissa Mich on elementissään ja yhtäkkiä orilta löytyykin omaa tahtoa liikkua eteenpäin ja esitellä taitojaan. Niinpä ratsastajan tehtäväksi radalla jääkin hillitä orin intoa ja rauhoittaa orin menoa, mikä tuntuu melko päinvastaiselta siihen, millainen Mich on kotioloissa. Showmiehen elkeistä huolimatta on Mich helppo käsitellä myös kilpailupaikalla, eikä ongelmia ole myöskään lastaamisen tai kuljettamisen kanssa.</p>
+					echo $tama_heppa->luonne;
+				?>
 			</div>
 
-			<div class="sukutaulu container">
+			<hr />
+
+			<div class="sukutaulu">
 
 			<h2>Sukutaulu ja jälkeläiset</h2>
 			
@@ -261,36 +262,58 @@ function lisaa_sukulainen($heppa, $rowspan){
 </table>
 			</div>
 
-			<div class="varsat container">
+			<?
+				if($tama_heppa->sukuselvitys !=""){
+				$tama_heppa->sukuselvitys = preg_replace('/\n/', '</p><p>',$tama_heppa->sukuselvitys);
+				$tama_heppa->sukuselvitys = "<p>{$tama_heppa->sukuselvitys}</p>";
+
+				echo '<div class="sukuselvitys panel-group">
+					  <div class="panel panel-default">
+					    <div class="panel-heading">
+					      <h4 class="panel-title">
+					        <a data-toggle="collapse" href="#collapse1">Lue sukuselvitys</a>
+					      </h4>
+					    </div>
+					    <div id="collapse1" class="panel-collapse collapse">
+					      <div class="panel-body">'.$tama_heppa->sukuselvitys.'</div>
+					    </div>
+					  </div>
+					</div>';
+				}
+				?>
+			
+
+
+			<div class="varsat">
 				<div class="row">
-					<div class="col-sm-3">
-						<h3>Varsan nimi</h3>
-						s. 1.1.2015<br />
-						e. Heppastiina<br />
-						om. Hertta Heppailija
-					</div>
-					<div class="col-sm-3">
-						<h3>Varsan nimi</h3>
-						s. 1.1.2015<br />
-						e. Heppastiina<br />
-						om. Hertta Heppailija
-					</div>
-					<div class="col-sm-3">
-						<h3>Varsan nimi</h3>
-						s. 1.1.2015<br />
-						e. Heppastiina<br />
-						om. Hertta Heppailija
-					</div>
-					<div class="col-sm-3">
-						<h3>Varsan nimi</h3>
-						s. 1.1.2015<br />
-						e. Heppastiina<br />
-						om. Hertta Heppailija
-					</div>
+				<?
+					
+					$varsat = $tama_heppa->hae_jalkelaiset($db, $tama_heppa->sukupuoli);
+					if(isset($varsat)){
+
+						foreach ($varsat as $varsa){
+							echo '<div class="varsa col-sm-3"><big><b> <a href="'.$varsa->url.'" target="_blank"> '.$varsa->nimi.'</a>'.'</b></big><br />';
+							echo $varsa->rotu_lyhenne.'-'.$varsa->sukupuoli.'<br />';
+							echo 's.'.muotoile_paivamaara($varsa->syntymaaika).'<br />';
+							if($tama_heppa->sukupuoli=='tamma'){
+								echo 'i. <a href="'.$varsa->isa->url.'" target="_blank">'.$varsa->isa->nimi.'</a><br />';
+							} else{
+								echo 'e. <a href="'.$varsa->ema->url.'" target="_blank">'.$varsa->ema->nimi.'</a><br />';
+							}
+							
+							echo 'om. <a href="'.$varsa->omistaja_url.'" target="_blank">'.$varsa->omistaja.'</a></div>';
+						}
+					}
+					
+				?>
+
+					
 				</div>
 			</div>
 
-			<div class="kilpailut container">
+			<hr />
+
+			<div class="kilpailut">
 
 			<h2>Kilpailut ja saavutukset</h2>
 				<div class="row">
@@ -302,9 +325,9 @@ function lisaa_sukulainen($heppa, $rowspan){
 					</div>
 				</div>
 			</div>
-
-			<div class="paivakirja container">
-
+			<hr />
+			<div class="paivakirja">
+			
 			<h2>Päiväkirja</h2>
 				<div class="row">
 					<div class="col-md-12">
