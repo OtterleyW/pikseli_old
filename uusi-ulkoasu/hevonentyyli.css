@@ -1,20 +1,37 @@
-.perustieto {
+* {
     box-sizing: border-box;
 }
 
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
 
 .layout {
 	max-width: 1200px;
+	margin: 0 auto;
 	margin-top: 100px;
+	text-align: justify;
 }
 
-.otsikko{
-	text-align: center;
-	padding: 20px;
+.container {
+	margin-bottom: 50px;
 }
 
+h1 {
+	font-family: 'Laila', serif;
+	font-size: 60px;
+}
+
+.virtuaalihevonen {
+	font-size: 10px;
+	color: #ddd;
+	text-transform: uppercase;
+}
 .tietoboksi {
+	width: 100%;
 	display: flex;
+	background-color: #fff;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
 	border-radius: 30px;
@@ -48,13 +65,27 @@
 }
 
 .perustieto {
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ddd;
 	line-height: 29px;
 	display: flex;
 	align-items: center;
 	flex-grow: 1;
+	margin-left: 25px;
 }
 
-.luonne {
-	text-align: justify;
+.tieto {
+	font-weight: bold;
+	width: 150px;
+	margin-left: 15px;
 }
+
+.vastaus{
+}
+
+.suku {
+	width: 100%;
+}
+.suku tr {
+	border-bottom: 1px solid #ddd;
+}
+
