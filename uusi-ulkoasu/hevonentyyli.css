@@ -30,10 +30,21 @@ h2 {
 	margin-top: 50px;
 }
 
+.meriitit {
+	font-size: 20px;
+}
+
+.fa {
+	color: #ccc;
+	margin-right: 10px;
+}
+
 .virtuaalihevonen {
 	font-size: 10px;
 	color: #ddd;
 	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 25px;
 }
 
 .tietoboksi {
@@ -49,7 +60,7 @@ h2 {
 	flex-wrap: wrap;
 	margin: 0 auto;
 	margin-top: 40px;
-	margin-bottom: 40px;
+	margin-bottom: 25px;
 }
 
 .kuva {
@@ -83,12 +94,39 @@ h2 {
 	margin-left: 25px;
 }
 
+.perustieto:last-child{
+	border-bottom: none;
+}
+
 .tieto {
 	font-weight: bold;
 	min-width: 150px;
 }
 
 .vastaus{
+}
+
+.kuvagalleria {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: space-around;
+}
+
+.galleriakuva img {
+	max-height: 200px;
+	padding: 5px;
+	margin: 10px;
+	border: 1px solid #ddd;
+}
+
+.copyteksti {
+	text-align: center;
+	font-size: 10px;
+	color: #ccc;
+	text-transform: uppercase;
 }
 
 .suku {
@@ -110,3 +148,37 @@ h2 {
 .sukuselvitys {
 	margin-top: 25px;
 }
+
+
+.listauskuva {
+	height: 150px;
+	width: auto;
+}
+
+/** Lighboxin määrittelyt **/
+
+#lightbox{
+	background-color:#eee;
+	padding: 10px;
+	border-bottom: 2px solid #666;
+	border-right: 2px solid #666;
+	}
+#lightboxDetails{
+	font-size: 0.8em;
+	padding-top: 0.4em;
+	}	
+#lightboxCaption{ float: left; }
+#keyboardMsg{ float: right; }
+#closeButton{ top: 5px; right: 5px; }
+
+#lightbox img{ border: none; clear: both;} 
+#overlay img{ border: none; }
+
+#overlay{ background-image: url(overlay.png); }
+
+* html #overlay{
+	background-color: #333;
+	back\ground-color: transparent;
+	background-image: url(blank.gif);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="overlay.png", sizingMethod="scale");
+	}

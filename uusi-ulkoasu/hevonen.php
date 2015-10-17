@@ -73,11 +73,13 @@
 	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	  <link href='https://fonts.googleapis.com/css?family=Laila' rel='stylesheet' type='text/css'>
 	  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	  
 	  <link rel="stylesheet" type="text/css" href="hevonentyyli.css">
 	  
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="lightbox.js"></script>
 	</head>
 
 	<body>
@@ -110,12 +112,19 @@
 		<div class="layout container">
 
 			<h1><?=$tama_heppa->nimi?></h1>
-			<span class="virtuaalihevonen">tämä on virtuaalihevonen - this is a sim-game horse</span>
+			
+			<? 
+				if($tama_heppa->meriitit !=""){
+					echo '<span class="meriitit"><i class="fa fa-trophy fa-lg"></i> '.$tama_heppa->meriitit.'</span><br />';
+				}
+			?>
+			
+			
 
 			<div class="perustiedot">
 				<div class="tietoboksi row">
 					<div class="kuva">
-						<a href="http://www.salaovi.net/hukkapuro/img/h/<?=$isokuva['osoite']?>" target="_blank"><img src="http://www.salaovi.net/hukkapuro/img/h/<?=$isokuva['osoite']?>" class="hevoskuva"></a> 
+						<a href="http://www.salaovi.net/hukkapuro/img/h/<?=$isokuva['osoite']?>" rel="lightbox"><img src="http://www.salaovi.net/hukkapuro/img/h/<?=$isokuva['osoite']?>" class="hevoskuva"></a> 
 					</div>
 
 					<div class="perustietolaatikko">
@@ -131,47 +140,46 @@
 				
 						<div class="perustieto">
 							<span class="tieto">Rotu, sukupuoli:</span> 
-							<span class="vastaus">Heppa, ori</span>
+							<span class="vastaus"><?=$tama_heppa->rotu?>, <?=$tama_heppa->sukupuoli?></span>
 						</div>
 				
 						<div class="perustieto">
 							<span class="tieto">Syntynyt, ikä:</span> 
-							<span class="vastaus">25.10.2015, 10v. </span>
+							<span class="vastaus"><? echo muotoile_paivamaara($tama_heppa->syntymaaika); if($tama_heppa->ika!=0){echo ", ".$tama_heppa->ika."v.";}?></span>
 						</div>
 				
 						<div class="perustieto">
 							<span class="tieto">Väri, säkäkorkeus:</span> 
-							<span class="vastaus">Rautias, 172cm</span>
+							<span class="vastaus"><?=$tama_heppa->vari?>, <?=$tama_heppa->saka?> cm </span>
 						</div>
 				
 						<div class="perustieto">
-							<span class="tieto">Kasvattaja:</span> 
-							<span class="vastaus">Heppas kasvattamo</span>
+							<span class="tieto"><? if($tama_heppa->suvun_pituus=="0"){echo'Maahantuoja';} else{echo'Kasvattaja';}?>:</span> 
+							<span class="vastaus"><? if($tama_heppa->kasvattaja_url != ""){
+									echo '<a href="'.$tama_heppa->kasvattaja_url.'" target="_blank">'.$tama_heppa->kasvattaja.'</a></span>';}
+									else {
+									echo $tama_heppa->kasvattaja;
+									}?>
 						</div>
 				
 						<div class="perustieto">
 							<span class="tieto">Omistaja:</span> 
-							<span class="vastaus">Hepan omistaja</span>
+							<span class="vastaus"><a href="mailto:<?=$tama_heppa->omistaja_url?>"><?=$tama_heppa->omistaja?></a></span>
 						</div>
 				
 						<div class="perustieto">
 							<span class="tieto">Painotuslaji:</span> 
-							<span class="vastaus">Heppailu</span>
+							<span class="vastaus"><?=$tama_heppa->painotus?></span>
 						</div>
 				
 						<div class="perustieto">
 							<span class="tieto">Koulutustaso:</span> 
-							<span class="vastaus">HepA, 160cm</span>
-						</div>
-				
-						<div class="perustieto">
-							<span class="tieto">Saavutukset:</span> 
-							<span class="vastaus">Superheppa -palkinto</span>
+							<span class="vastaus"><?=$tama_heppa->koulutustaso?></span>
 						</div>
 					</div>
 				</div>
 
-			
+			<div class="virtuaalihevonen">tämä on virtuaalihevonen - this is a sim-game horse</div>
 			<div class="luonne">
 				<?
 					$tama_heppa->luonne = preg_replace('/\n/', '</p><p>',$tama_heppa->luonne);
@@ -182,6 +190,25 @@
 			</div>
 
 			<hr />
+
+			<div class="kuvagalleria">
+				<?
+					foreach($kuvat as $kuva){
+						echo '<div class="galleriakuva"><a href="http://www.salaovi.net/hukkapuro/img/h/'.$kuva['osoite'].'" rel="lightbox"><img src="http://www.salaovi.net/hukkapuro/img/h/'.$kuva['osoite'].'"/></a></div>';
+					}
+
+				?>
+			</div>
+
+			<div class="copyteksti">Kuvat &copy;
+			<?	
+				foreach ($kuvaajat as $kuvaaja) {
+					if($kuvaaja['url'] != "kuvaajan url"){echo '<a href="'.$kuvaaja['url'].'" target="_blank">'.$kuvaaja['nimi'].'</a>, ';}
+					else{echo $kuvaaja['nimi'];}
+				}
+			?>
+			</div>  
+
 
 			<div class="sukutaulu">
 
@@ -292,7 +319,7 @@ function lisaa_sukulainen($heppa, $rowspan){
 					if(isset($varsat)){
 
 						foreach ($varsat as $varsa){
-							echo '<div class="varsa col-sm-3"><big><b> <a href="'.$varsa->url.'" target="_blank"> '.$varsa->nimi.'</a>'.'</b></big><br />';
+							echo '<div class="varsa col-sm-4"><big><b> <a href="'.$varsa->url.'" target="_blank"> '.$varsa->nimi.'</a>'.'</b></big><br />';
 							echo $varsa->rotu_lyhenne.'-'.$varsa->sukupuoli.'<br />';
 							echo 's.'.muotoile_paivamaara($varsa->syntymaaika).'<br />';
 							if($tama_heppa->sukupuoli=='tamma'){
