@@ -215,98 +215,98 @@
 			<h2>Sukutaulu ja jälkeläiset</h2>
 			
 				
-<?php
+				<?php
 
 
-function tayta_sukulaisrivit($heppa, &$koko_suku, $polvi_str) {
-	$rivi = &$koko_suku[count($koko_suku) - 1];
-	$rivi[] = array($heppa, $polvi_str);
-	if (isset($heppa->isa)) {
-		tayta_sukulaisrivit($heppa->isa, $koko_suku, $polvi_str . "i");
-	}
-	if (isset($heppa->ema)) {
-		$koko_suku[] = array();
-		tayta_sukulaisrivit($heppa->ema, $koko_suku, $polvi_str . "e");
-	}
-}
+				function tayta_sukulaisrivit($heppa, &$koko_suku, $polvi_str) {
+					$rivi = &$koko_suku[count($koko_suku) - 1];
+					$rivi[] = array($heppa, $polvi_str);
+					if (isset($heppa->isa)) {
+						tayta_sukulaisrivit($heppa->isa, $koko_suku, $polvi_str . "i");
+					}
+					if (isset($heppa->ema)) {
+						$koko_suku[] = array();
+						tayta_sukulaisrivit($heppa->ema, $koko_suku, $polvi_str . "e");
+					}
+				}
 
-$koko_suku = array(array());
-tayta_sukulaisrivit($tama_heppa->isa, $koko_suku, "i");
-$koko_suku[] = array();
-tayta_sukulaisrivit($tama_heppa->ema, $koko_suku, "e");
+				$koko_suku = array(array());
+				tayta_sukulaisrivit($tama_heppa->isa, $koko_suku, "i");
+				$koko_suku[] = array();
+				tayta_sukulaisrivit($tama_heppa->ema, $koko_suku, "e");
 
-//Hevosen tietojen muotoilu sukutaulua varten
-function lisaa_sukulainen($heppa, $rowspan){
-	if(!isset($heppa->id)){
-		return 'tuntematon';
-	}
-	
-	$str = '<span class="hepannimi">'.$heppa->nimi.'</span>';
+				//Hevosen tietojen muotoilu sukutaulua varten
+				function lisaa_sukulainen($heppa, $rowspan){
+					if(!isset($heppa->id)){
+						return 'tuntematon';
+					}
+					
+					$str = '<span class="hepannimi">'.$heppa->nimi.'</span>';
 
-	if($heppa->url != ""){
-		$str = '<span class="hepannimi"><a href="'.$heppa->url.'" target="_blank">'.$heppa->nimi.'</a></span>';
-	}
+					if($heppa->url != ""){
+						$str = '<span class="hepannimi"><a href="'.$heppa->url.'" target="_blank">'.$heppa->nimi.'</a></span>';
+					}
 
-	if($heppa->status != "" && $heppa->status != "kuollut" ){
-		$str = $str." <small>(".$heppa->status.")</small>";
-	}
+					if($heppa->status != "" && $heppa->status != "kuollut" ){
+						$str = $str." <small>(".$heppa->status.")</small>";
+					}
 
 
-	if($rowspan >2){
-		if($heppa->rotu_lyhenne != ""){
-			$str = $str."<br /><small>".$heppa->rotu_lyhenne."-".$heppa->sukupuoli.", ".$heppa->saka."cm, ".$heppa->vari."</small>";
-		}
-	}
+					if($rowspan >2){
+						if($heppa->rotu_lyhenne != ""){
+							$str = $str."<br /><small>".$heppa->rotu_lyhenne."-".$heppa->sukupuoli.", ".$heppa->saka."cm, ".$heppa->vari."</small>";
+						}
+					}
 
-	if($heppa->meriitit != ""){
-		$str = $str."<br /><small>".$heppa->meriitit.'</small>';
-	}
-	return $str;
-}
-?>
+					if($heppa->meriitit != ""){
+						$str = $str."<br /><small>".$heppa->meriitit.'</small>';
+					}
+					return $str;
+				}
+				?>
 						
-<table class="suku">
+				<table class="suku">
 
-<?php foreach($koko_suku as $suku_rivi): ?>
+				<?php foreach($koko_suku as $suku_rivi): ?>
 
-	<tr>
+					<tr>
 
-	<?php foreach($suku_rivi as $i => $heppa_info): ?>
-		<?php
-			$heppa = $heppa_info[0];
-			$polvi_str = $heppa_info[1];
-			$rowspan = pow(2, (count($suku_rivi) - $i - 1));
-		?>
+					<?php foreach($suku_rivi as $i => $heppa_info): ?>
+						<?php
+							$heppa = $heppa_info[0];
+							$polvi_str = $heppa_info[1];
+							$rowspan = pow(2, (count($suku_rivi) - $i - 1));
+						?>
 
-		<td rowspan="<?= $rowspan ?>"><b><?= $polvi_str . "." ?></b> <?= lisaa_sukulainen($heppa, $rowspan) ?></td>
+						<td rowspan="<?= $rowspan ?>"><b><?= $polvi_str . "." ?></b> <?= lisaa_sukulainen($heppa, $rowspan) ?></td>
 
-	<?php endforeach; ?>
+					<?php endforeach; ?>
 
-	</tr>
+					</tr>
 
-<?php endforeach; ?>
+				<?php endforeach; ?>
 
-</table>
+				</table>
 			</div>
 
-			<?
-				if($tama_heppa->sukuselvitys !=""){
-				$tama_heppa->sukuselvitys = preg_replace('/\n/', '</p><p>',$tama_heppa->sukuselvitys);
-				$tama_heppa->sukuselvitys = "<p>{$tama_heppa->sukuselvitys}</p>";
+				<?
+					if($tama_heppa->sukuselvitys !=""){
+					$tama_heppa->sukuselvitys = preg_replace('/\n/', '</p><p>',$tama_heppa->sukuselvitys);
+					$tama_heppa->sukuselvitys = "<p>{$tama_heppa->sukuselvitys}</p>";
 
-				echo '<div class="sukuselvitys panel-group">
-					  <div class="panel panel-default">
-					    <div class="panel-heading">
-					      <h4 class="panel-title">
-					        <a data-toggle="collapse" href="#collapse1">Lue sukuselvitys</a>
-					      </h4>
-					    </div>
-					    <div id="collapse1" class="panel-collapse collapse">
-					      <div class="panel-body">'.$tama_heppa->sukuselvitys.'</div>
-					    </div>
-					  </div>
-					</div>';
-				}
+					echo '<div class="sukuselvitys panel-group">
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						        <a data-toggle="collapse" href="#collapse1">Lue sukuselvitys</a>
+						      </h4>
+						    </div>
+						    <div id="collapse1" class="panel-collapse collapse">
+						      <div class="panel-body">'.$tama_heppa->sukuselvitys.'</div>
+						    </div>
+						  </div>
+						</div>';
+					}
 				?>
 			
 
@@ -343,14 +343,114 @@ function lisaa_sukulainen($heppa, $rowspan){
 			<div class="kilpailut">
 
 			<h2>Kilpailut ja saavutukset</h2>
+
+				<?
+					if($tama_heppa->saavutukset != ""){
+					echo '<div class="row">
+							<div class="col-md-12">
+								<div class="kisat panel panel-default">
+								 	<div class="panel-body">
+									 	<div class="saavutukset">
+											'.$tama_heppa->saavutukset.'
+										</div>
+								  </div>
+								 </div>
+							</div>
+						</div>';
+					}
+				?>
+
 				<div class="row">
-					<div class="col-md-10">
-						Kilpailut
+					<div class="col-md-12">
+						<div class="kisat panel panel-default">
+							 <div class="panel-body">
+							 	<!-- Hepan kisat tekstinä -->
+								<?
+								if($tama_heppa->kilpailu_tyyppi == "teksti") {
+
+						    		$stmt = $db->prepare('SELECT * FROM hevonen_kisat WHERE hevonen_id = :id');
+						    		$stmt->bindParam(':id', $hevonen_id);
+						    		$stmt->execute();
+						    		$haettu_kisat = $stmt->fetch(PDO::FETCH_ASSOC);
+								 ?>
+
+							    <div class="sijoitukset">
+
+							    <?
+							    		echo '<div class="sijoitukset">'.$haettu_kisat['teksti'].'</div>';
+							    	
+							    ?>
+								
+								<!-- Hepan kisat sijoituksina -->
+								<?
+								    } elseif($tama_heppa->kilpailu_tyyppi == "normaali") {
+											$stmt = $db->prepare('SELECT * FROM hevonen_kisat WHERE hevonen_id = :id');
+							        		$stmt->bindParam(':id', $hevonen_id);
+							        		$stmt->execute();
+							        		$haettu_kisat = $stmt->fetchAll();
+							      ?>
+							        		
+							        
+							        <div class="sijoitukset">
+							        	<p>Sijoituksia yhteensä <b><?=count($haettu_kisat)?></b></p>
+
+							        	<?
+							        		foreach ($haettu_kisat as $kisa) {
+							        		  echo $kisa['pvm'].' - '.$kisa['laji'].' - <a href="'.$kisa['kutsu_url'].'" target="_blank">kutsu</a> - '.$kisa['luokka'].' - <b>'.$kisa['sijoitus'].'/'.$kisa['osallistujat'].'</b><br />';
+							        		}
+							        	?>
+							    	</div>
+
+							    <!-- Heppa kisaa porrastetuissa -->
+							    	<? 
+							    		} 
+							    		else{
+
+							            $reknro = $tama_heppa->vhtunnus; 
+							            $json = file_get_contents('http://www.virtuaalihevoset.net/?rajapinta/ominaisuudet.html?vh=' . $reknro); 
+							            $obj = json_decode($json, true); 
+							   		 ?>
+
+							   		 <div class="row">
+							   		 	<div class="tasot col-md-6">
+
+							    		   	<b>Kouluratsastus</b> taso <?php echo $obj['krj']['level'];?><br />
+
+							    		  	<b>Esteratsastus</b> taso
+							    		  	<?php echo $obj['erj']['level'];?><br />
+
+							    		    <b>Kenttäratsastus</b> taso
+							    		    <?php echo $obj['kerj']['level'];?><br />
+							    		    
+							    		    <b>Valjakkoajo</b> taso <?php echo $obj['vvj']['level'];?><br />
+							    		 </div>
+							    		 <div class="ominaisuuspisteet col-md-6">
+
+							    		    Hyppykapasiteetti ja rohkeus:
+							    		     <?php echo $obj['points']['hyppykapasiteetti_rohkeus'];?><br />
+
+							    		     Kuuliaisuus ja luonne:
+							    		     <?php echo $obj['points']['kuuliaisuus_luonne'];?><br />
+			
+							    		     Tahti ja irtonaisuus:
+							    		     <?php echo $obj['points']['tahti_irtonaisuus'];?><br />
+
+							    		     Nopeus ja kestävyys:
+							    		      <?php echo $obj['points']['nopeus_kestavyys'];?><br />
+
+							    		     Tarkkuus ja ketteryys:
+							    		      <?php echo $obj['points']['tarkkuus_ketteryys'];?><br />
+
+							    		</div>
+							    		</div>
+							    		<?php echo $obj['error_message'];
+							    			}
+							    		?>
+
+							</div>
+						</div>
 					</div>
-					<div class="col-md-2">
-						Saavutukset
 					</div>
-				</div>
 			</div>
 			<hr />
 			<div class="paivakirja">

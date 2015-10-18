@@ -35,13 +35,13 @@ h2 {
 }
 
 .fa {
-	color: #ccc;
+	color: #bbb;
 	margin-right: 10px;
 }
 
 .virtuaalihevonen {
 	font-size: 10px;
-	color: #ddd;
+	color: #bbb;
 	text-transform: uppercase;
 	text-align: center;
 	margin-bottom: 25px;
@@ -56,7 +56,7 @@ h2 {
 	border-radius: 30px;
 	overflow: hidden;
 	padding: 25px;
-	border: 1px solid #CCC;
+	border: 1px solid #ddd;
 	flex-wrap: wrap;
 	margin: 0 auto;
 	margin-top: 40px;
@@ -72,7 +72,7 @@ h2 {
 	width: auto;
 	height: auto;
 	max-width: 100%;
-	max-height: 350px;
+	max-height: 325px;
 }
 
 .perustietolaatikko {
@@ -125,7 +125,7 @@ h2 {
 .copyteksti {
 	text-align: center;
 	font-size: 10px;
-	color: #ccc;
+	color: #bbb;
 	text-transform: uppercase;
 }
 
@@ -149,6 +149,29 @@ h2 {
 	margin-top: 25px;
 }
 
+.kisat {
+	background-color: #fff;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	overflow: hidden;
+	padding: 25px;
+	border: 1px solid #ddd;
+	margin-top: 40px;
+	margin-bottom: 25px;
+}
+
+.sijoitukset {
+	max-height: 250px;
+	overflow: auto;
+}
+
+.saavutukset{
+	background-image: url('pokaalim.png');
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	min-height: 120px;
+}
 
 .listauskuva {
 	height: 150px;
