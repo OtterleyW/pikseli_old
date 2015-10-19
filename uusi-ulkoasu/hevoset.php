@@ -73,8 +73,8 @@
 		    </div>
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">Etusivu</a></li>
-		        <li><a href="#">Hevoset</a></li>
+		        <li><a href="index.php">Etusivu</a></li>
+		        <li class="active"><a href="hevoset.php">Hevoset</a></li>
 		        <li><a href="#">Toiminta</a></li> 
 		        <li><a href="#">Tallin esittely</a></li> 
 		      </ul>
@@ -90,25 +90,106 @@
 
 			<h1>Hukkapuron hevoset</h1>
 
-			<h2>Orit</h2>
+			<ul class="hevoslistausnav nav nav-pills nav-justified">
+			  <li class="active"><a data-toggle="tab" href="#pvorit">Puoliveriset orit</a></li>
+			  <li><a data-toggle="tab" href="#pvtammat">Puoliveriset tammat</a></li>
+			  <li><a data-toggle="tab" href="#muut">Muut hevoset</a></li>
+			</ul>
 
-			<div class="hevoslistaus row">
-			
-			<?
-				foreach ($orit as $hevonen) {
-					$tama_heppa = hae_tiedot($hevonen['id'], $db);
-					
-					$stmt = $db->prepare('SELECT * FROM hevonen_kuva WHERE hevonen_id = :id AND iso_kuva="true"');
-					$stmt->bindParam(':id', $hevonen['id']);
-					$stmt->execute();
-					$isokuva = $stmt->fetch(PDO::FETCH_ASSOC);
+			<div class="tab-content">
+			  <div id="pvorit" class="tab-pane fade in active">
+			    <h2>Puoliveriset orit</h2>
 
-					echo '<div class="varsa col-sm-4"><h4>'.$tama_heppa->nimi .'</h4><br />
-					<img src="http://www.salaovi.net/hukkapuro/img/h/'.$isokuva['osoite'].'" class="listauskuva"/></div>';
-					}
-			?>
+			    <div class="hevoslistaus">
+			    
+			    <?
+			    	foreach ($orit as $hevonen) {
+			    		$tama_heppa = hae_tiedot($hevonen['id'], $db);
+			    		
+			    		$suku = $tama_heppa->suvun_pituus.'-polvinen';
+			    		if($suku ==0){$suku = 'evm';}
+			    		elseif($suku > 5){$suku ='pitkä suku';}
 
+			    		echo '<div class="heppalaatikko panel panel-default">
+			    					<a href="'.$tama_heppa->url.'">
+			    					<div class="panel-body">
+			    						<h4><b>'.$tama_heppa->nimi.'</b></h4>
+			    							'.$tama_heppa->rotu.'<br />
+				    						'.$suku.' suku<br />
+				    						'.$tama_heppa->painotus.'<br />
+			    						<b>'.$tama_heppa->meriitit.'&nbsp;</b>
+			    					</div>
+			    					</a>
+			    				</div>';
+			    		}
+			    ?>
+
+			    </div>
+			  </div>
+			  <div id="pvtammat" class="tab-pane fade">
+			    <h2>Puoliveriset tammat</h2>
+
+			    <div class="hevoslistaus">
+			    
+			    <?
+			    	foreach ($tammat as $hevonen) {
+			    		$tama_heppa = hae_tiedot($hevonen['id'], $db);
+			    		
+			    		$suku = $tama_heppa->suvun_pituus.'-polvinen';
+			    		if($suku ==0){$suku = 'evm';}
+			    		elseif($suku > 5){$suku ='pitkä suku';}
+
+			    		echo '<div class="heppalaatikko panel panel-default">
+			    					<a href="'.$tama_heppa->url.'">
+			    					<div class="panel-body">
+			    						<h4><b>'.$tama_heppa->nimi.'</b></h4>
+			    							'.$tama_heppa->rotu.'<br />
+				    						'.$suku.' suku<br />
+				    						'.$tama_heppa->painotus.'<br />
+			    						<b>'.$tama_heppa->meriitit.'&nbsp;</b>
+			    					</div>
+			    					</a>
+			    				</div>';
+			    		}
+			    ?>
+
+			    </div>
+			   
+			  </div>
+			  <div id="muut" class="tab-pane fade">
+			    <h2>Muut hevoset</h2>
+
+			    <div class="hevoslistaus">
+			    
+			    <?
+			    	foreach ($muut as $hevonen) {
+			    		$tama_heppa = hae_tiedot($hevonen['id'], $db);
+			    		
+			    		$suku = $tama_heppa->suvun_pituus.'-polvinen';
+			    		if($suku ==0){$suku = 'evm';}
+			    		elseif($suku > 5){$suku ='pitkä suku';}
+
+			    		echo '<div class="heppalaatikko panel panel-default">
+			    					<a href="'.$tama_heppa->url.'">
+			    					<div class="panel-body">
+			    						<h4><b>'.$tama_heppa->nimi.'</b></h4>
+			    							'.$tama_heppa->rotu.'<br />
+				    						'.$suku.' suku<br />
+				    						'.$tama_heppa->painotus.'<br />
+			    						<b>'.$tama_heppa->meriitit.'&nbsp;</b>
+			    					</div>
+			    					</a>
+			    				</div>';
+			    		}
+			    ?>
+
+			    </div>
+			  </div>
 			</div>
+
+			
+
+			
 
 		    <div class="clearfix visible-lg"></div>
 		</div>

@@ -10,6 +10,10 @@ body {
 	line-height: 1.8;
 }
 
+.nav li:hover{
+	background-color: #eeeeee;
+}
+
 .layout {
 	max-width: 1000px;
 	margin: 0 auto;
@@ -20,16 +24,103 @@ body {
 	box-shadow: 2px 2px 50px 50px #FCFCFC;
 }
 
-
 h1 {
 	font-family: 'Laila', serif;
 	font-size: 60px;
 }
 
 h2 {
-	margin-top: 50px;
+	margin-top: 75px;
+	margin-bottom: 25px;
 }
 
+/** Etusivu **/
+
+.etusivu {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: stretch;
+	align-content: stretch;
+	width: 100%;
+}
+
+.etusivu a:hover{
+	text-decoration: none;
+}
+
+.hevosetpanel {
+	background-image: url('hevoset.jpg');
+	background-size: cover;
+	background-position: center;
+	min-height: 400px;
+	min-width: 200px;
+}
+
+.toimintapanel {
+	background-image: url('kasvatus.jpg');
+	background-size: cover;
+	background-position: center;
+	min-height: 400px;
+	min-width: 200px;
+}
+
+.esittelypanel {
+	background-image: url('esittely.jpg');
+	background-size: cover;
+	background-position: center;
+	min-height: 400px;
+	min-width: 200px;
+}
+
+.panel:hover .panel-footer {
+	background-color: #eeeeee;
+}
+
+.panel-footer h4{
+	font-weight: bold;
+	text-align: center;
+}
+
+
+
+/** Hevoslistaus **/
+
+.hevoslistausnav {
+	margin-top: 40px;
+}
+
+
+.hevoslistaus {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: stretch;
+	align-content: stretch;
+}
+.heppalaatikko {
+	min-width: 275px;
+	margin: 10px;
+	text-align: center;
+	font-size: 13px;
+}
+.heppalaatikko h4{
+	font-size: 16px;
+}
+
+
+.heppalaatikko .panel-body:hover {
+	background-color: #eeeeee;
+}
+
+.heppalaatikko a:hover{
+	text-decoration: none;
+}
+
+
+/** Hevosen ulkoasu **/
 .meriitit {
 	font-size: 20px;
 }
@@ -129,6 +220,10 @@ h2 {
 	text-transform: uppercase;
 }
 
+.luonne {
+	margin-bottom: 50px;
+}
+
 .suku {
 	width: 100%;
 	margin-bottom: 25px;
@@ -167,16 +262,19 @@ h2 {
 }
 
 .saavutukset{
-	background-image: url('pokaalim.png');
-	background-repeat: no-repeat;
-	background-position: bottom right;
-	min-height: 120px;
+	margin-top: 25px;
+	margin-bottom: 50px;
 }
 
-.listauskuva {
-	height: 150px;
-	width: auto;
+.saavutukset h4{
+	margin-top: 25px;
 }
+
+.ominaisuuspisteet {
+	vertical-align: middle;
+	height: 100%;
+}
+
 
 /** Lighboxin määrittelyt **/
 

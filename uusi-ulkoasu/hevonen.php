@@ -97,7 +97,7 @@
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      <ul class="nav navbar-nav">
 		        <li class="active"><a href="#">Etusivu</a></li>
-		        <li><a href="#">Hevoset</a></li>
+		        <li><a href="hevoset.php">Hevoset</a></li>
 		        <li><a href="#">Toiminta</a></li> 
 		        <li><a href="#">Tallin esittely</a></li> 
 		      </ul>
@@ -125,6 +125,14 @@
 				<div class="tietoboksi row">
 					<div class="kuva">
 						<a href="http://www.salaovi.net/hukkapuro/img/h/<?=$isokuva['osoite']?>" rel="lightbox"><img src="http://www.salaovi.net/hukkapuro/img/h/<?=$isokuva['osoite']?>" class="hevoskuva"></a> 
+						<br /><span class="copyteksti">Kuvat &copy;
+						<?	
+							foreach ($kuvaajat as $kuvaaja) {
+								if($kuvaaja['url'] != "kuvaajan url"){echo '<a href="'.$kuvaaja['url'].'" target="_blank">'.$kuvaaja['nimi'].'</a>, ';}
+								else{echo $kuvaaja['nimi'];}
+							}
+						?>
+						</span>  
 					</div>
 
 					<div class="perustietolaatikko">
@@ -179,7 +187,11 @@
 					</div>
 				</div>
 
+
+
 			<div class="virtuaalihevonen">tämä on virtuaalihevonen - this is a sim-game horse</div>
+
+
 			<div class="luonne">
 				<?
 					$tama_heppa->luonne = preg_replace('/\n/', '</p><p>',$tama_heppa->luonne);
@@ -189,7 +201,6 @@
 				?>
 			</div>
 
-			<hr />
 
 			<div class="kuvagalleria">
 				<?
@@ -200,14 +211,7 @@
 				?>
 			</div>
 
-			<div class="copyteksti">Kuvat &copy;
-			<?	
-				foreach ($kuvaajat as $kuvaaja) {
-					if($kuvaaja['url'] != "kuvaajan url"){echo '<a href="'.$kuvaaja['url'].'" target="_blank">'.$kuvaaja['nimi'].'</a>, ';}
-					else{echo $kuvaaja['nimi'];}
-				}
-			?>
-			</div>  
+			<hr />
 
 
 			<div class="sukutaulu">
@@ -343,27 +347,8 @@
 			<div class="kilpailut">
 
 			<h2>Kilpailut ja saavutukset</h2>
-
-				<?
-					if($tama_heppa->saavutukset != ""){
-					echo '<div class="row">
-							<div class="col-md-12">
-								<div class="kisat panel panel-default">
-								 	<div class="panel-body">
-									 	<div class="saavutukset">
-											'.$tama_heppa->saavutukset.'
-										</div>
-								  </div>
-								 </div>
-							</div>
-						</div>';
-					}
-				?>
-
 				<div class="row">
-					<div class="col-md-12">
-						<div class="kisat panel panel-default">
-							 <div class="panel-body">
+					<div class="col-md-6">
 							 	<!-- Hepan kisat tekstinä -->
 								<?
 								if($tama_heppa->kilpailu_tyyppi == "teksti") {
@@ -374,7 +359,7 @@
 						    		$haettu_kisat = $stmt->fetch(PDO::FETCH_ASSOC);
 								 ?>
 
-							    <div class="sijoitukset">
+		
 
 							    <?
 							    		echo '<div class="sijoitukset">'.$haettu_kisat['teksti'].'</div>';
@@ -390,10 +375,8 @@
 							        		$haettu_kisat = $stmt->fetchAll();
 							      ?>
 							        		
-							        
+							        <p>Sijoituksia yhteensä <b><?=count($haettu_kisat)?></b></p>
 							        <div class="sijoitukset">
-							        	<p>Sijoituksia yhteensä <b><?=count($haettu_kisat)?></b></p>
-
 							        	<?
 							        		foreach ($haettu_kisat as $kisa) {
 							        		  echo $kisa['pvm'].' - '.$kisa['laji'].' - <a href="'.$kisa['kutsu_url'].'" target="_blank">kutsu</a> - '.$kisa['luokka'].' - <b>'.$kisa['sijoitus'].'/'.$kisa['osallistujat'].'</b><br />';
@@ -410,57 +393,134 @@
 							            $json = file_get_contents('http://www.virtuaalihevoset.net/?rajapinta/ominaisuudet.html?vh=' . $reknro); 
 							            $obj = json_decode($json, true); 
 							   		 ?>
+							   		 	<p><?=$tama_heppa->lempinimi?> kilpailee porrastetuissa kilpailuissa</p>
+							   		 		<?
+							   		 			$krjtaso = $obj['krj']['level'];
+							   		 			$krjtasomax = $obj['krj']['level_max'];
+							   		 			$krjprosentti = ($krjtaso/($krjtasomax))*100;
+							   		 			if($krjprosentti > 100){
+							   		 				$krjprosentti = 100;
+							   		 			}
 
-							   		 <div class="row">
-							   		 	<div class="tasot col-md-6">
+							   		 		?>
 
 							    		   	<b>Kouluratsastus</b> taso <?php echo $obj['krj']['level'];?><br />
+							    		   	<div class="progress">
+							    		   	  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+							    		   	  aria-valuenow="<?=$krjtaso?>" aria-valuemin="0" aria-valuemax="<?=$krjtasomax ?>" style="width:<?=$krjprosentti?>%">
+							    		   	  <?php echo $obj['krj']['points'];?> 
+							    		   	  </div>
+							    		   	</div>
 
-							    		  	<b>Esteratsastus</b> taso
-							    		  	<?php echo $obj['erj']['level'];?><br />
+							    		  	<?
+							   		 			$erjtaso = $obj['erj']['level'];
+							   		 			$erjtasomax = $obj['erj']['level_max'];
+							   		 			$erjprosentti = ($erjtaso/($erjtasomax))*100;
+							   		 			if($erjprosentti > 100){
+							   		 				$erjprosentti = 100;
+							   		 			}
 
-							    		    <b>Kenttäratsastus</b> taso
-							    		    <?php echo $obj['kerj']['level'];?><br />
-							    		    
-							    		    <b>Valjakkoajo</b> taso <?php echo $obj['vvj']['level'];?><br />
-							    		 </div>
-							    		 <div class="ominaisuuspisteet col-md-6">
+							   		 		?>
 
-							    		    Hyppykapasiteetti ja rohkeus:
-							    		     <?php echo $obj['points']['hyppykapasiteetti_rohkeus'];?><br />
+							    		   	<b>Esteratsastus</b> taso <?php echo $obj['erj']['level'];?><br />
+							    		   	<div class="progress">
+							    		   	  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+							    		   	  aria-valuenow="<?=$erjtaso?>" aria-valuemin="0" aria-valuemax="<?=$erjtasomax ?>" style="width:<?=$erjprosentti?>%">
+							    		   	  <?php echo $obj['erj']['points'];?> 
+							    		   	  </div>
+							    		   	</div>
 
-							    		     Kuuliaisuus ja luonne:
-							    		     <?php echo $obj['points']['kuuliaisuus_luonne'];?><br />
-			
-							    		     Tahti ja irtonaisuus:
-							    		     <?php echo $obj['points']['tahti_irtonaisuus'];?><br />
+							    		    <?
+							   		 			$kerjtaso = $obj['kerj']['level'];
+							   		 			$kerjtasomax = $obj['kerj']['level_max'];
+							   		 			$kerjprosentti = ($kerjtaso/($kerjtasomax))*100;
+							   		 			if($kerjprosentti > 100){
+							   		 				$kerjprosentti = 100;
+							   		 			}
 
-							    		     Nopeus ja kestävyys:
-							    		      <?php echo $obj['points']['nopeus_kestavyys'];?><br />
+							   		 		?>
 
-							    		     Tarkkuus ja ketteryys:
-							    		      <?php echo $obj['points']['tarkkuus_ketteryys'];?><br />
+							    		   	<b>Kenttäratsastus</b> taso <?php echo $obj['kerj']['level'];?><br />
+							    		   	<div class="progress">
+							    		   	  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+							    		   	  aria-valuenow="<?=$kerjtaso?>" aria-valuemin="0" aria-valuemax="<?=$kerjtasomax ?>" style="width:<?=$kerjprosentti?>%">
+							    		   	  <?php echo $obj['kerj']['points'];?> 
+							    		   	  </div>
+							    		   	</div>
 
-							    		</div>
-							    		</div>
+							    		   	<?
+							   		 			$vvjtaso = $obj['vvj']['level'];
+							   		 			$vvjtasomax = $obj['vvj']['level_max'];
+							   		 			$vvjprosentti = ($vvjtaso/($vvjtasomax))*100;
+							   		 			if($vvjprosentti > 100){
+							   		 				$vvjprosentti = 100;
+							   		 			}
+
+							   		 		?>
+
+							    		   	<b>Valjakkoajo</b> taso <?php echo $obj['vvj']['level'];?><br />
+							    		   	<div class="progress">
+							    		   	  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+							    		   	  aria-valuenow="<?=$vvjtaso?>" aria-valuemin="0" aria-valuemax="<?=$vvjtasomax ?>" style="width:<?=$vvjprosentti?>%">
+							    		   	  <?php echo $obj['vvj']['points'];?> 
+							    		   	  </div>
+							    		   	</div>
+							    		
 							    		<?php echo $obj['error_message'];
 							    			}
 							    		?>
+							   	</div>
 
-							</div>
-						</div>
-					</div>
+
+					<?
+						if($tama_heppa->saavutukset != ""){
+						echo '
+								<div class="col-md-6">
+										 	<div class="saavutukset">
+												'.$tama_heppa->saavutukset.'
+											</div>
+								</div>';
+						}
+					?>
 					</div>
 			</div>
 			<hr />
 			<div class="paivakirja">
-			
-			<h2>Päiväkirja</h2>
+			<?
+				$stmt = $db->prepare('SELECT * FROM hevonen_tekstit WHERE hevonen_id = :id ORDER BY pvm DESC');
+				$stmt->bindParam(':id', $tama_heppa->id);
+				$stmt->execute();
+				$tekstit = $stmt->fetchAll();
+				
+				if(count($tekstit) != 0){
+			?>
+
+				<h2>Päiväkirja</h2>
+
 				<div class="row">
 					<div class="col-md-12">
-					Heppalille kuuluu hyvää
+					<?
+						foreach($tekstit as $teksti){
+					?>
+					
+						<h4><? if($teksti['pvm'] != "0000-00-00"){echo muotoile_paivamaara($teksti['pvm']).' - ';} echo$teksti['otsikko']?></h4>
+						<span class="copyteksti"><?=$teksti['tekstin_tyyppi'].' - kirjoittanut '.$teksti['kirjoittaja']?><br /><br /></span>
+							<?
+								$teksti = preg_replace('/\n/', '</p><p>',$teksti['teksti']);
+								$teksti = "<p>{$teksti}</p>";
+								echo $teksti
+							?>
+
+
+						<hr />
+					
+					<?}?>
+					
 					</div>
 				</div>
+				<? }?>
+
+
 			</div>
 
 
