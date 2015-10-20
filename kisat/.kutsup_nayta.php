@@ -121,7 +121,7 @@ $suurin_kutsu_id = $hae_suurin_kutsu_id->fetchColumn();
 
 
 	
-		<ol>
+		<ul>
 			
 			<? foreach ($luokat as $luokka) { ?>
 
@@ -132,7 +132,7 @@ $suurin_kutsu_id = $hae_suurin_kutsu_id->fetchColumn();
 			?>
 						
 
-		</ol>
+		</ul>
 
 		<h2>Tulokset</h2>
 			<p>
@@ -147,7 +147,7 @@ $suurin_kutsu_id = $hae_suurin_kutsu_id->fetchColumn();
 ?>
 	<h2>Luokat</h2>
 	
-		<ol>
+		<ul>
 			
 			<? foreach ($luokat as $luokka) { 
 			$osallistuja_array = pilko_rivit($luokka['osallistujat']);
@@ -160,7 +160,7 @@ $suurin_kutsu_id = $hae_suurin_kutsu_id->fetchColumn();
 			?>
 						
 
-		</ol>
+		</ul>
 
 	<h2>Osallistujat</h2>
 
@@ -169,7 +169,7 @@ $suurin_kutsu_id = $hae_suurin_kutsu_id->fetchColumn();
 			$osallistuja_array = pilko_rivit($luokka['osallistujat']);
 			$osallistuja_lkm = count($osallistuja_array);
 		?>
-				<h3><?= $numero + 1 ?>. <?= $luokka['nimi'] ?> <?=$osallistuja_lkm ?>/<?=$osallistuja_max ?></h3>
+				<h3><?= $luokka['nimi'] ?> <?=$osallistuja_lkm ?>/<?=$osallistuja_max ?></h3>
 
 				<p>
 					<?

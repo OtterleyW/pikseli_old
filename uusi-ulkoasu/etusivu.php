@@ -1,6 +1,7 @@
 <? 
 	require('../../hukkapuro/.yhdista.php');
 	require('../../hukkapuro/luokat/Heppa.php');
+	require('yla.php');
 
 	function hae_tiedot($id, $db){
 			//Perustietojen hakeminen
@@ -24,74 +25,14 @@
 			return $tama_heppa;
 		}
 
-		$stmt = $db->prepare('SELECT * FROM hevonen_tiedot WHERE sukupuoli="ori" AND omistaja = "Otterley Wilson VRL-12757" AND status <> "poistettu" AND status <> "kuollut" AND kaytto <>"pihatto" AND rotu_lyhenne<>"pre" ORDER BY painotus DESC, suvun_pituus, rotu, nimi');
+		$stmt = $db->prepare('SELECT * FROM hevonen_tiedot WHERE omistaja = "Otterley Wilson VRL-12757" AND status <> "poistettu" AND status <> "kuollut" AND kaytto <>"pihatto" AND rotu_lyhenne<>"pre" ORDER BY id DESC');
 		$stmt->execute();
-		$orit = $stmt->fetchAll();
-
-		$stmt = $db->prepare('SELECT * FROM hevonen_tiedot WHERE sukupuoli="tamma" AND omistaja = "Otterley Wilson VRL-12757" AND status <> "poistettu" AND status <> "kuollut" AND kaytto <>"pihatto" AND rotu_lyhenne<>"pre" ORDER BY painotus DESC, suvun_pituus, rotu, nimi');
-		$stmt->execute();
-		$tammat = $stmt->fetchAll();
-
-		$stmt = $db->prepare('SELECT * FROM hevonen_tiedot WHERE omistaja = "Otterley Wilson VRL-12757" AND status <> "poistettu"AND status <> "kuollut" AND kaytto ="pihatto" OR rotu_lyhenne="pre" AND  omistaja = "Otterley Wilson VRL-12757" ORDER BY rotu_lyhenne, suvun_pituus');
-		$stmt->execute();
-		$muut = $stmt->fetchAll();
+		$uusinheppa = $stmt->fetch(PDO::FETCH_ASSOC);
 	?>
 
-<!DOCTYPE html>
-<html lang="fi">
-
-	<head>
-	  
-	  <title>Virtuaalitalli Hukkapuro</title>
-	  
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  
-	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	  <link href='https://fonts.googleapis.com/css?family=Laila' rel='stylesheet' type='text/css'>
-	  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	  
-	  <link rel="stylesheet" type="text/css" href="hevonentyyli.css">
-	  
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	  <script type="text/javascript" src="lightbox.js"></script>
-	</head>
-
-	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span> 
-		      </button>
-		      <a class="navbar-brand" href="index.php">Hukkapuro</a>
-		    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar">
-		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="index.php">Etusivu</a></li>
-		        <li><a href="hevoset.php">Hevoset</a></li>
-		        <li><a href="#">Toiminta</a></li> 
-		        <li><a href="#">Tallin esittely</a></li> 
-		      </ul>
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="#"><span class="glyphicon glyphicon-book"></span> Vieraskirja</a></li>
-		        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Sähköposti</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		</nav>
+			<h1>Virtuaalitalli Hukkapuro</h1>
 
 
-		<div class="layout container">
-			<div class="jumbotron">
-			    <h1>Virtuaalitalli Hukkapuro</h1> 
-
-			    <p>Hukkapuro on vuoden 2014 syyskuussa perustettu virtuaalitalli, joka ei ympäristöltään vastaa aivan tyypillistä virtuaalista puoliverisiittolaa. </p>
-			</div>
 
 			  <div class="etusivu">
 			      <div class="col-sm-4">
@@ -120,10 +61,43 @@
 		        </div>
 			  </div>
 			
+			<div class="row">
 
-			
 
-		    <div class="clearfix visible-lg"></div>
-		</div>
-	</body>
-</html>
+				<h3>Tervetuloa Hukkapuroon</h3>
+
+				<div class="col-md-8">
+
+					<p>
+						Kilometritolkulla kuoppaista hiekkatietä, eikä kyltin kylttiä missään, navigaattori näyttää kuitenkin suoraan eteenpäin ja ruudussa lukee tasan varmasti se osoite, joka oli ilmoitettu kilpailukutsussa tai hevosen myynti-ilmoituksessa. Kun usko perille pääsemiseen alkaa täysin loppua, tekee tie vihdoin tiukan mutkan, jonka jälkeen edessä siintää suuri tallikompleksi. Tallialue saattaa muistuttaa ensisilmäykseltä varsinaista sekamelskaa eri aikaan rakennettuine tallirakennuksineen ja sinne tänne viriteltyine tarhoineen. Älä kuitenkaan anna sen hämätä, sillä olet saapunut Hukkapuroon, missä kasvatetaan suomalaisia puoliverisiä kouluratojen kunikaiksi ja kunigattariksi.
+					</p>
+					<p>
+						Hukkapuro on vuoden 2014 syyskuussa perustettu virtuaalitalli, joka ei ympäristöltään vastaa aivan tyypillistä virtuaalista puoliverisiittolaa. Meillä tilat eivät ole aivan viimeisen päälle tai uusinta uutta ja treenaaminenkin tapahtuu melko vaatimattomissa olosuhteissa. Siitä huolimatta jokaiseen hevoseemme panostetaan vähintään yhtä paljon ja yhtä suurella rakkaudella kuin moderneimmillakin luksustalleilla. Voipa sen välillä laskea jopa kotikenttäeduksi, että hevoseme ovat tottuneet rämisevään maneesiin, Suomen sääoloihin ja melko huolettomaan arkeen.
+					</p>
+					<p>
+						Vaikka tavoitteet jokaisen hevosemme kohdalla ovat korkealla, perustuu tallin toiminta rentoon meininkiin, eikä verenmaku suussa suorittamiseen. Meillä toimintaa on silloin kun huvittaa, varsoja syntyy silloin kun tuntuu sopivalta ja aikakin kuluu hyvin vaihtelevalla nopeudella.Näillä saatesanoilla olet erittäin tervetullut tutustumaan Hukkapuroon ja sen porukkaan!
+					</p>
+					<p>
+						Lämpimin terveisin,<br /><br />
+						<span class="allekirjoitus"><a href="mailto:virtuaali@POISTAsalaovi.net">Otterley Wilson</a></span><br />
+						<small>tallin omistaja, VRL-12757</small>
+					</p>
+				</div>
+				<div class="col-md-4">
+					<div class="ajankohtaista well">
+						<h4>Ajankohtaista</h4>
+						<small><span class="glyphicon glyphicon-pushpin"></span></small>&nbsp; Tallia päivitetty viimeksi 20.10.2015<br />
+						<small><span class="glyphicon glyphicon-pushpin"></span></small>&nbsp; Katso myynnissä olevat hevoset <a href="myytavat.php">täältä</a>!<br />
+						<small><span class="glyphicon glyphicon-pushpin"></span></small>&nbsp; Uusin tulokas <?=$uusinheppa['rotu_lyhenne']?>-<?=$uusinheppa['sukupuoli']?> <a href="<?=$uusinheppa['url']?>"><?=$uusinheppa['nimi']?></a><br />
+					</div>
+						<a href="http://www.virtuaalihevoset.net/?tallit/tallirekisteri/talli.html?talli=HUKK9931&like=2" target="_blank" class="aanesta btn btn-primary btn-lg">
+							Äänestä VRL:n tallilistalla<br />
+							<span class="glyphicon glyphicon-thumbs-up"></span> 
+							<span class="glyphicon glyphicon-heart-empty"></span> 
+						</a>
+				</div>
+			</div>
+
+<?
+	require('ala.php');
+?>

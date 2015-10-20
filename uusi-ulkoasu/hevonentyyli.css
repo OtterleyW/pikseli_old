@@ -7,7 +7,12 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	background-image: url('whitediamond.png');
 	color: #616161;
+	font-size: 13px;
 	line-height: 1.8;
+}
+
+.nav {
+	font-size: 14px;
 }
 
 .nav li:hover{
@@ -27,10 +32,11 @@ body {
 h1 {
 	font-family: 'Laila', serif;
 	font-size: 60px;
+	text-shadow:1px 1px 5px rgba(0,0,0,.3);
 }
 
 h2 {
-	margin-top: 75px;
+	margin-top: 40px;
 	margin-bottom: 25px;
 }
 
@@ -44,6 +50,7 @@ h2 {
 	align-items: stretch;
 	align-content: stretch;
 	width: 100%;
+	margin-top: 40px;
 }
 
 .etusivu a:hover{
@@ -83,9 +90,29 @@ h2 {
 	text-align: center;
 }
 
+.allekirjoitus {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 20px;
+}
 
+.aanesta {
+	width: 100%;
+}
+
+.ajankohtaista{
+	line-height: 2.7;
+}
+
+.ajankohtaista h4{
+	border-bottom: 1px dashed #ccc;
+	padding-bottom: 10px;
+}
 
 /** Hevoslistaus **/
+
+.hevoset {
+	margin-top: 40px;
+}
 
 .hevoslistausnav {
 	margin-top: 40px;
@@ -119,6 +146,43 @@ h2 {
 	text-decoration: none;
 }
 
+/** Toiminta **/
+
+.toiminta {
+	margin-top: 40px;
+}
+
+.toiminta .img img{
+	float: right;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	max-width: 250px;
+	border: 1px solid #ddd;
+}
+
+.toiminta .btn{
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.kasvattilista {
+	margin-top: 25px;
+}
+
+.toiminta .list-group-item:hover{
+	background-color: #eeeeee;
+}
+
+/**Footer**/
+
+.footer{
+	font-size: 10px;
+	color: #bbb;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 25px;
+	text-align: right;
+}
 
 /** Hevosen ulkoasu **/
 .meriitit {
