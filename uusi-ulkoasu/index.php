@@ -30,7 +30,7 @@
 		$uusinheppa = $stmt->fetch(PDO::FETCH_ASSOC);
 	?>
 
-			<h1>Virtuaalitalli Hukkapuro</h1>
+			<h1 class="etusivun-otsikko">Virtuaalitalli Hukkapuro</h1>
 
 
 
@@ -66,7 +66,7 @@
 
 				<h3>Tervetuloa Hukkapuroon</h3>
 
-				<div class="col-md-8">
+				<div class="etusivun-teksti col-md-8">
 
 					<p>
 						Kilometritolkulla kuoppaista hiekkatietä, eikä kyltin kylttiä missään, navigaattori näyttää kuitenkin suoraan eteenpäin ja ruudussa lukee tasan varmasti se osoite, joka oli ilmoitettu kilpailukutsussa tai hevosen myynti-ilmoituksessa. Kun usko perille pääsemiseen alkaa täysin loppua, tekee tie vihdoin tiukan mutkan, jonka jälkeen edessä siintää suuri tallikompleksi. Tallialue saattaa muistuttaa ensisilmäykseltä varsinaista sekamelskaa eri aikaan rakennettuine tallirakennuksineen ja sinne tänne viriteltyine tarhoineen. Älä kuitenkaan anna sen hämätä, sillä olet saapunut Hukkapuroon, missä kasvatetaan suomalaisia puoliverisiä kouluratojen kunikaiksi ja kunigattariksi.
@@ -78,16 +78,15 @@
 						Vaikka tavoitteet jokaisen hevosemme kohdalla ovat korkealla, perustuu tallin toiminta rentoon meininkiin, eikä verenmaku suussa suorittamiseen. Meillä toimintaa on silloin kun huvittaa, varsoja syntyy silloin kun tuntuu sopivalta ja aikakin kuluu hyvin vaihtelevalla nopeudella.Näillä saatesanoilla olet erittäin tervetullut tutustumaan Hukkapuroon ja sen porukkaan!
 					</p>
 					<p>
-						Lämpimin terveisin,<br /><br />
-						<span class="allekirjoitus"><a href="mailto:virtuaali@POISTAsalaovi.net">Otterley Wilson</a></span><br />
+						<span class="allekirjoitus">- <a href="mailto:virtuaali@POISTAsalaovi.net">Otterley Wilson</a></span><br />
 						<small>tallin omistaja, VRL-12757</small>
 					</p>
 				</div>
-				<div class="col-md-4">
+				<div class="sivupalkki col-md-4">
 					<div class="ajankohtaista well">
 						<h4>Ajankohtaista</h4>
-						<small><span class="glyphicon glyphicon-pushpin"></span></small>&nbsp; Tallia päivitetty viimeksi 20.10.2015<br />
-						<small><span class="glyphicon glyphicon-pushpin"></span></small>&nbsp; Katso myynnissä olevat hevoset <a href="myytavat.php">täältä</a>!<br />
+						<small><span class="glyphicon glyphicon-pushpin"></span></small>&nbsp; Tallia päivitetty viimeksi 22.10.2015<br />
+						<small><span class="glyphicon glyphicon-pushpin"></span></small>&nbsp; Katso myytävät hevoset <a href="myytavat.php">täältä</a>!<br />
 						<small><span class="glyphicon glyphicon-pushpin"></span></small>&nbsp; Uusin tulokas <?=$uusinheppa['rotu_lyhenne']?>-<?=$uusinheppa['sukupuoli']?> <a href="<?=$uusinheppa['url']?>"><?=$uusinheppa['nimi']?></a><br />
 					</div>
 						<a href="http://www.virtuaalihevoset.net/?tallit/tallirekisteri/talli.html?talli=HUKK9931&like=2" target="_blank" class="aanesta btn btn-primary btn-lg">

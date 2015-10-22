@@ -14,7 +14,7 @@
 	  <link href='https://fonts.googleapis.com/css?family=Homemade+Apple' rel='stylesheet' type='text/css'>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	  
-	  <link rel="stylesheet" type="text/css" href="hevonentyyli.css">
+	  <link rel="stylesheet" type="text/css" href="tyyli.css">
 	  
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -35,17 +35,18 @@
 		    </div>
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      <ul class="nav navbar-nav">
-		        <li><a href="etusivu.php">Etusivu</a></li>
+		        <li><a href="index.php">Etusivu</a></li>
 		        <li><a href="hevoset.php">Hevoset</a></li>
 		        <li><a href="toiminta.php">Toiminta</a></li> 
-		        <li><a href="#">Tallin esittely</a></li> 
+		        <li><a href="esittely.php">Tallin esittely</a></li> 
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
-		        <!-- <li><a href="#"><span class="glyphicon glyphicon-book"></span> Vieraskirja</a></li> -->
-		        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Sähköposti</a></li>
+		        <li><a href="http://hukkapuro.shinybook.fi/" target="new"><span class="glyphicon glyphicon-book"></span> Vieraskirja</a></li>
+		        <li><a href="mailto:virtuaali@POISTAsalaovi.net"><span class="glyphicon glyphicon-envelope"></span> Sähköposti</a></li>
 		      </ul>
 		    </div>
 		  </div>
 		</nav>
 
 		<div class="layout container">
+

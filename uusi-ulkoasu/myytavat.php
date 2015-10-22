@@ -27,12 +27,16 @@
 
 	?>
 			<h1>Myytävät kasvatit</h1>
+
+
+
 					<p>Täältä löydät kaikki Hukkapuron myynnissä olevat kasvatit. Jos olet kiinnostunut ostamaan kasvatin, ota yhteyttä tallin vieraskirjaan tai sähköpostitse (<a href="mailto:virtuaali@salaovi.net">virtuaali@salaovi.net</a>). Jos tarjolla ei juuri tällä hetkellä ole sopivaa kasvattia, on tallimme hevosista mahdollista saada myös tilausvarsoja.</p>
 
 					<h2>Myyntiehdot</h2>
+					<div class="img"><img src="img/myytavat.jpg" title="&copy; Gestüt Hämelschenburg, thank you!" /></div>
 					<p>
 					- Kasvatin sivut ilmoitetaan 14vrk sisällä ostosta (lisäaikaa on mahdollista saada kysymällä) <br />
-					- Kasvatin perustietoja (nimi, sukupuoli, rotu, syntymäaika, suku) ei saa muuttaa, kun ne on kerran päätetty<br />
+					- Kasvatin perustietoja (nimi, sukupuoli (pl. ruunaus), rotu, syntymäaika, suku) ei saa muuttaa, kun ne on kerran päätetty<br />
 					- Kasvatti rekisteröidään VRL:ään, kasvattajaksi merkitään HUKK9931 ja kasvatusliitteeksi Wolf's, Wolf tai Hukkapuron<br />
 					- Kasvatin vaihtaessa osoitetta on siitä ilmoitettava kasvattajalle (lupaa kasvatin myyntiin ei tarvitse erikseen kysyä, kunhan uudet sivut ilmoitetaan tietooni)<br />
 					- Kasvattajaksi sivuille on merkittävä Hukkapuro linkitettynä tallin etusivulle (<a href="http://www.salaovi.net/hukkapuro">http://www.salaovi.net/hukkapuro</a>)<br />
@@ -49,7 +53,43 @@
 					<h2>Myytävät varsat</h2>
 					
 
-				
+					<div class="row">
+						<h4>fwb-o/t. Rockstar Wolf / Space Shot Wolf </h4>
+					<div class="col-md-6">
+
+						s. 07/2015<br />
+						koulupainoitteinen<br />
+						3-polvinen suku<br /><br />
+
+
+						<small>
+						Isälinja: Rockabee Wolf - Rogue Wolf - Rontigo<br />
+						Emälinja: Stellar Wind Wolf - Solar Storm LM - Quick Sun Star<br /><br />
+						</small>
+						
+						</div>
+						<div class="col-md-6">
+						<table class="table table-bordered myyntisuku">
+							<tr>
+								<td rowspan="2">i. <a href="http://www.salaovi.net/hukkapuro/rockabee-wolf">Rockabee Wolf</a></td>
+								<td rowspan="1">ii. <a href="http://www.salaovi.net/hukkapuro/rogue-wolf">Rogue Wolf</a></td>
+								<tr>
+									<td rowspan="1">ie. <a href="http://vahtipossu.org/eucarya/bumblebee.html">Bumblebee Solo</a></td>
+								</tr>
+							</tr>
+							<tr>
+								<td rowspan="2">e. <a href="http://www.salaovi.net/hukkapuro/stellar-wind-wolf">Stellar Wind Wolf</a> KRJ-I</td>
+								<td rowspan="1">ei. <a href="http://www.salaovi.net/hukkapuro/nameas-obsidian-dc">Nameas Obsidian DC</a></td>
+								<tr>
+									<td rowspan="1">ee. <a href="http://www.salaovi.net/hukkapuro/solar-storm-lm">Solar Storm LM</a> KRJ-I</td>
+								</tr>
+							</tr>
+						</table>
+						</div>
+					</div>
+					
+					<hr />
+
 					<div class="row">
 						<h4>fwb-o/t. Chocolatte Wolf / Choclatino Wolf </h4>
 					
@@ -86,49 +126,86 @@
 
 						
 					</div>
-
 					<hr />
-					<div class="row">
-						<h4>fwb-o/t. Rockstar Wolf / Space Shot Wolf </h4>
-					<div class="col-md-6">
 
-						s. 07/2015<br />
+					<div class="row">
+						<h4>fwb-o/t. Snapshot Wolf / Back In Fashion Wolf </h4>
+					
+					<div class="col-md-6">
+						s. 09/2015<br />
 						koulupainoitteinen<br />
-						3-polvinen suku<br /><br />
+						4-polvinen suku<br /><br />
 
 
 						<small>
-						Isälinja: Rockabee Wolf - Rogue Wolf - Rontigo<br />
-						Emälinja: Stellar Wind Wolf - Solar Storm LM - Quick Sun Star<br /><br />
+						Isälinja: Paparazzi Vegas - K.N Scandal - Alfa Star T - Spaceshot xx<br />
+						Emälinja: Marigold HRW  - Maria-Galante Vegas - RG Dominica - Ginger xx<br /><br />
 						</small>
 						
 						</div>
 						<div class="col-md-6">
 						<table class="table table-bordered myyntisuku">
 							<tr>
-								<td rowspan="2">i. <a href="http://www.salaovi.net/hukkapuro/rockabee-wolf">Rockabee Wolf</a></td>
-								<td rowspan="1">ii. <a href="http://www.salaovi.net/hukkapuro/rogue-wolf">Rogue Wolf</a></td>
+								<td rowspan="2">i. <a href="http://ruiskukka.org/yksityiset/h/PaparazziVegas.php">Paparazzi Vegas</a> </td>
+								<td rowspan="1">ii. VIR MVA Ch <a href="http://web.archive.org/web/20150121115934/http://heffalumps.net/vegas/hev/scandal.php">K.N Scandal</a></td>
 								<tr>
-									<td rowspan="1">ie. <a href="http://vahtipossu.org/eucarya/bumblebee.html">Bumblebee Solo</a></td>
+									<td rowspan="1">ie. <a href="http://web.archive.org/web/20150121114604/http://heffalumps.net/vegas/hev/magoriana.php">Magoriana Vegas</a></td>
 								</tr>
 							</tr>
 							<tr>
-								<td rowspan="2">e. <a href="http://www.salaovi.net/hukkapuro/stellar-wind-wolf">Stellar Wind Wolf</a> KRJ-I</td>
-								<td rowspan="1">ei. <a href="http://www.salaovi.net/hukkapuro/nameas-obsidian-dc">Nameas Obsidian DC</a></td>
+								<td rowspan="2">e. <a href="http://www.salaovi.net/hukkapuro/marigold-hrw">Marigold HRW</a></td>
+								<td rowspan="1">ei. <a href="http://www.anfarwol.net/windsor/p/sydanyonheartfelt">Sydänyön Heartfelt</a></td>
 								<tr>
-									<td rowspan="1">ee. <a href="http://www.salaovi.net/hukkapuro/solar-storm-lm">Solar Storm LM</a> KRJ-I</td>
+									<td rowspan="1">ee. <a href="http://hrws.webs.com/tammat/marie-galante.html">Maria-Galante Vegas</a></td>
 								</tr>
 							</tr>
 						</table>
 						</div>
 
-
+						
 					</div>
-
-
-
-				
 					<hr />
+
+					<div class="row">
+						<h4>hann/fwb-o/t.  Luxor Wolf / Santana Wolf</h4>
+					
+					<div class="col-md-6">
+						s. 09/2015<br />
+						koulupainoitteinen<br />
+						4-polvinen suku<br /><br />
+
+
+						<small>
+						Isälinja: Thebes Vegas - Grafton Ring x - Grenadier Bellamy xx - Early Birdie xx<br />
+						Emälinja: Santiana Cliff - Calandra Cliff - Melacholia Holmes - GS Metropolis<br /><br />
+						</small>
+						
+						</div>
+						<div class="col-md-6">
+						<table class="table table-bordered myyntisuku">
+							<tr>
+								<td rowspan="2">i. <a href="http://vahtipossu.org/eucarya/thebes.html">Thebes Vegas</a> x</td>
+								<td rowspan="1">ii. <a href="http://heffalumps.net/vegas/hev/grafton.php/">Grafton Ring</a> x</td>
+								<tr>
+									<td rowspan="1">ie. <a href="http://heffalumps.net/vegas/hev/fleur.php">Fleur de Farao xx</a></td>
+								</tr>
+							</tr>
+							<tr>
+								<td rowspan="2">e. <a href="http://www.salaovi.net/hukkapuro/santiana-cliff">Santiana Cliff</a></td>
+								<td rowspan="1">ei. <a href="http://rachcliff.webs.com/sin.htm">Suprant Sin</a> KRJ-I</td>
+								<tr>
+									<td rowspan="1">ee. <a href="http://rachcliff.webs.com/calandra.htm">Calandra Cliff</a></td>
+								</tr>
+							</tr>
+						</table>
+						</div>
+
+						
+					</div>
+					<hr />
+
+
+
 					<div class="row">
 						<h4>fwb-o/t. Supersonic Wolf / Wolf's Dainty </h4>
 					<div class="col-md-6">
@@ -165,9 +242,11 @@
 
 					</div>
 					<hr />
+
 					<div class="row">
-						<h4>fwb-o/t. Black Cat Wolf / Wolf's Blackness </h4>
-					<div class="col-md-6">
+						<h4>fwb-o/t. Black Cat Wolf / Wolf's Black Queen </h4>
+						
+						<div class="col-md-6">
 						s. 07/2015<br />
 						koulupainoitteinen<br />
 						pitkä suku<br /><br />
@@ -192,7 +271,7 @@
 								<td rowspan="2">e. <a href="http://www.salaovi.net/hukkapuro/blackette-don">Blackette DON</a> KRJ-I</td>
 								<td rowspan="1">ei. <a href="http://eripura.net/bairdon/h/blackwoodamor.php">Blackwood Amor</a></td>
 								<tr>
-									<td rowspan="1">ee. <a href="http://eripura.net/bairdon/h/sweetleafdon.php">Sweet LEaf DON</a> KRJ-I</td>
+									<td rowspan="1">ee. <a href="http://eripura.net/bairdon/h/sweetleafdon.php">Sweet Leaf DON</a> KRJ-I</td>
 								</tr>
 							</tr>
 						</table>
@@ -200,11 +279,82 @@
 
 
 					</div>
+					<hr />
 
-
+					<div class="row">
+						<h4>fwb-o/t. Swordsman Wolf / Magnolia Wolf  </h4>
 						
+						<div class="col-md-6">
+						s. 09/2015<br />
+						koulupainoitteinen<br />
+						pitkä suku<br /><br />
 
 
+						<small>
+						Isälinja: Quiero's Greatsword xx - Strix Gremlins xx - Rocky Broken ESC xx - Little Indian ESC xx - Chenoa ESC xx - Comanche xx<br />
+						Emälinja: Monte Rosa Thrill - Clairvoyant 'If - Mystique 'If - Hatelove 'If - Hairmetal Dusk - Ladyrock Drab - Satisfaction Rock - Cocarna Kooss - Cocaine Kate 54 - Friesenhexe GER<br /><br />
+						</small>
+						
+						</div>
+						<div class="col-md-6">
+						<table class="table table-bordered myyntisuku">
+							<tr>
+								<td rowspan="2">i. <a href="http://siivenisku.net/wiherkangas/wordy.html">Quiero's Greatsword xx</a></td>
+								<td rowspan="1">ii. <a href="http://www.kerppa.net/quiero/h/strixgremlinsxx.php">Strix Gremlins xx</a></td>
+								<tr>
+									<td rowspan="1">ie. <a href="http://www.kerppa.net/virt/quieroseverendingxx.php">Quiero's Ever-ending xx</a></td>
+								</tr>
+							</tr>
+							<tr>
+								<td rowspan="2">e. <a href="http://salaovi.net/hukkapuro/monte-rosa-thrill">Monte Rosa Thrill</a></td>
+								<td rowspan="1">ei. <a href="http://hrws.webs.com/orit/i_wont.html">I Won't Die 54</a> KRJ-II</td>
+								<tr>
+									<td rowspan="1">ee. <a href="http://sokerihiiri.net/veera/claire.html">Clairvoyant 'If</a></td>
+								</tr>
+							</tr>
+						</table>
+						</div>
+
+
+					</div>
+					<hr />
+
+					<div class="row">
+						<h4>fwb-o/t. Armani Wolf / Ambrosia Wolf  </h4>
+						
+						<div class="col-md-6">
+						s. 09/2015<br />
+						koulupainoitteinen<br />
+						pitkä suku<br /><br />
+
+
+						<small>
+						Isälinja: Hugo Boss Ion - Artemis RC - Everlost 'If - Gotham Typhoon - The V Word PB - Sixtillion<br />
+						Emälinja: Ambitchous Wolf - Wolf's Diamond Eyes - Hopeatuulen Diamond - Suprant Electra - Silverbrand Rosarita - Rubica HA - Fortführer<br /><br />
+						</small>
+						
+						</div>
+						<div class="col-md-6">
+						<table class="table table-bordered myyntisuku">
+							<tr>
+								<td rowspan="2">i. <a href="http://vahtipossu.org/eucarya/hugoboss.html">Hugo Boss Ion</a></td>
+								<td rowspan="1">ii. <a href="http://hevosmaailma.net/Ionic/PV/artemisrc.html">Artemis RC</a></td>
+								<tr>
+									<td rowspan="1">ie. <a href="http://hevosmaailma.net/Ionic/PV/cocochanel.html">Coco Chanel</a></td>
+								</tr>
+							</tr>
+							<tr>
+								<td rowspan="2">e. <a href="http://salaovi.net/hukkapuro/ambitchous-wolf">Ambitchous Wolf</a></td>
+								<td rowspan="1">ei. <a href="http://mollum.net/anca/">Wister Acaraho</a></td>
+								<tr>
+									<td rowspan="1">ee. <a href="http://salaovi.net/hukkapuro/wolfs-diamond-eyes">Wolf's Diamond Eyes</a> KRJ-II</td>
+								</tr>
+							</tr>
+						</table>
+						</div>
+
+
+					</div>
 					<hr />
 
 			<h2>Varatut</h2>

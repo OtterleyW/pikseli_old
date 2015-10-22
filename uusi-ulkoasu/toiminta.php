@@ -42,7 +42,7 @@ function hae_tiedot($id, $db){
 			  <div class="toiminta row">
 			      <div class="col-sm-12">
 				
-				<div class="img"><img src="toiminta.jpg"/></div>
+				<div class="img"><img src="img/toiminta.jpg" title="&copy; Gestüt Hämelschenburg, thank you!" /></div>
 			      <p>
 			      Hukkapuron toiminta painottuu pääosin kuolupainoitteisten suomalaisten puoliveristen kasvatukseen. Tavoitteenamme on kasvattaa suorituskykyisiä, kilpakentillä ja laatuarvosteluissa menestyviä ratsuja samalla myös vaalien vanhoja sukulinjoja. Niinpä tallistamme löytyykin monipuolinen valikoima sekä vanhoja että uusia sukua edustavia hevosia. Hevosemme ovat tarjolla jalostukseen myös ulkopuolisille tammoille ja oreille. Kasvatustoiminnan lisäksi Hukkapurossa järjestetään myös jonkin verran kilpailuita ja valmennuksia.</p>
 
