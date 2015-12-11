@@ -1,29 +1,7 @@
 <? 
-	require('../../hukkapuro/.yhdista.php');
-	require('../../hukkapuro/luokat/Heppa.php');
+	require('.yhdista.php');
+	require('luokat/Heppa.php');
 	require('yla.php');
-
-	function hae_tiedot($id, $db){
-			//Perustietojen hakeminen
-			$stmt = $db->prepare('SELECT * FROM hevonen_tiedot WHERE id = :id');
-			$stmt->bindParam(':id', $hevonen_id);
-			$hevonen_id = $id;
-			$stmt->execute();
-			$haettu_tiedot = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
-			//Sukutietojen
-			$stmt = $db->prepare('SELECT * FROM hevonen_suku WHERE id = :id');
-			$stmt->bindParam(':id', $hevonen_id);
-			$stmt->execute();
-			$haettu_suku = $stmt->fetch(PDO::FETCH_ASSOC);
-
-			//Tämän Heppa-olion luonti
-			$tama_heppa = new Heppa($haettu_tiedot, $haettu_suku);
-			$tama_heppa->hae_sukupolvet($db, $tama_heppa->suvun_pituus);
-
-			return $tama_heppa;
-		}
 
 		$stmt = $db->prepare('SELECT * FROM hevonen_tiedot WHERE omistaja = "Otterley Wilson VRL-12757" AND status <> "poistettu" AND status <> "kuollut" AND kaytto <>"pihatto" AND rotu_lyhenne<>"pre" ORDER BY id DESC');
 		$stmt->execute();

@@ -1,6 +1,6 @@
 <? 
-	require('../../hukkapuro/.yhdista.php');
-	require('../../hukkapuro/luokat/Heppa.php');
+	require('.yhdista.php');
+	require('luokat/Heppa.php');
 	require('yla.php');
 
 	//Päivämäärän muotoilu
