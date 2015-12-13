@@ -36,7 +36,10 @@ class Sukulainen extends Component {
 const suvunPituus = (sukuObj, pituus = 0) => {
   const { mother, father } = sukuObj;
   if (mother && father) {
-    return Math.max(suvunPituus(mother, pituus + 1), suvunPituus(father, pituus + 1));
+    return Math.max(
+      suvunPituus(mother, pituus + 1),
+      suvunPituus(father, pituus + 1)
+    );
   }
   return pituus;
 };
