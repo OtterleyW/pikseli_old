@@ -54,6 +54,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "css-loader": "^0.23.0",
     "extract-text-webpack-plugin": "^0.9.1",
+    "glob": "^6.0.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.1",
