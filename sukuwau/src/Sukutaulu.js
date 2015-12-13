@@ -20,10 +20,8 @@ export default class Sukutaulu extends Component {
     const pituus = suvunPituus(suku);
 
     return (
-      <div style={{ overflow: 'hidden' }}>
-        <div className={styles.container}>
-          {this._renderHeppa(suku, pituus)}
-        </div>
+      <div className={styles.container}>
+        {this._renderHeppa(suku, pituus)}
       </div>
     );
   }
