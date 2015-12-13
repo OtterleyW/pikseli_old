@@ -1,3 +1,5 @@
+/* eslint-disable no-console, prefer-arrow-callback */
+
 var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
