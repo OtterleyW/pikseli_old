@@ -31,4 +31,4 @@ const sukuJson = {
   }
 };
 
-render(<Sukutaulu suku={sukuJson} />, document.getElementById('root'));
+render(<Sukutaulu suku={sukuJson} />, document.getElementById('vs-sukutaulu-root'));

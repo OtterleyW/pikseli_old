@@ -3,7 +3,7 @@
 	require('luokat/Heppa.php');
 	require('yla.php');
 ?>
-<div id="root"></div>
+<div id="vs-sukutaulu-root"></div>
 
 <?php
 	// Koita ladata webpack-dev-serverin kautta localhostilla tiedostot,
