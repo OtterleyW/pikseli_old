@@ -1,53 +1,6 @@
 import React, { Component, PropTypes as T } from 'react';
 
-const layoutStyles = {
-  container: {},
-  sukulainen: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexGrow: 1
-  },
-  heppainfo: {
-    display: 'flex',
-    padding: '5px',
-    flexGrow: 1,
-    width: '0'
-  },
-  heppa: {
-    width: '100%'
-  },
-  sukuinfo: {
-    display: 'flex',
-    flexDirection: 'column',
-    flexGrow: 1
-  }
-};
-
-const borderColor = '#333';
-const lookStyles = {
-  container: {
-    borderTop: `1px solid ${borderColor}`,
-    borderLeft: `1px solid ${borderColor}`
-  },
-  heppainfo: {
-    borderBottom: `1px solid ${borderColor}`,
-    borderRight: `1px solid ${borderColor}`
-  },
-  sukulainen: {
-    backgroundColor: 'rgba(0, 100, 0, 0.15)'
-  },
-  heppa: {
-    textAlign: 'center'
-  }
-};
-
-const styles = Object.keys(layoutStyles).reduce((endStyles, key) => ({
-  ...endStyles,
-  [key]: {
-    ...layoutStyles[key],
-    ...lookStyles[key]
-  }
-}), {});
+import styles from './styles/Sukutaulu.css';
 
 class Sukulainen extends Component {
   static propTypes = {
@@ -60,19 +13,21 @@ class Sukulainen extends Component {
   render() {
     const {nimi, children, polvi, pituus} = this.props;
 
-    const sukuinfoTyylit = {
-      ...styles.sukuinfo,
-      flexGrow: pituus - polvi
-    };
-
     return (
-      <div style={styles.sukulainen}>
-        <div style={styles.heppainfo}>
-          <div style={styles.heppa}>
+      <div className={styles.sukulainen}>
+        <div className={styles.heppainfo}>
+          <div className={styles.heppa}>
             {nimi}
           </div>
         </div>
-        {children && <div style={sukuinfoTyylit}>{children}</div>}
+        {children &&
+          <div
+            className={styles.sukuinfo}
+            style={{flexGrow: pituus - polvi}}
+          >
+            {children}
+          </div>
+        }
       </div>
     );
   }
@@ -93,7 +48,7 @@ export default class Sukutaulu extends Component {
 
     return (
       <div style={{ overflow: 'hidden' }}>
-        <div style={styles.container}>
+        <div className={styles.container}>
           {this._renderHeppa(suku, pituus)}
         </div>
       </div>
