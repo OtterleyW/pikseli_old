@@ -1,0 +1,28 @@
+{
+  "name": "hukkapuro-sukutaulu",
+  "version": "0.0.0",
+  "description": "An amazing family tree for SIM game horse stable Hukkapuro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valscion/pikseli.git"
+  },
+  "keywords": [
+    "react",
+    "hukkapuro",
+    "sim",
+    "game",
+    "horse",
+    "family",
+    "tree"
+  ],
+  "author": "Vesa Laakso <laakso.vesa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valscion/pikseli/issues"
+  },
+  "homepage": "https://github.com/valscion/pikseli#readme"
+}
