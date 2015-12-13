@@ -1,33 +1,5 @@
 :global(.VS_Sukutaulu__container) {}
-:global(.VS_Sukutaulu__heppainfo) {}
-:global(.VS_Sukutaulu__sukulainen) {}
-:global(.VS_Sukutaulu__heppa) {}
 
 .container {
   composes: global(VS_Sukutaulu__container);
 }
-.sukulainen {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-}
-.heppainfo {
-  composes: global(VS_Sukutaulu__heppainfo);
-  display: flex;
-  padding: 5px;
-  flex-grow: 1;
-  width: 0;
-}
-.sukuinfo {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-.sukulainen {
-  composes: global(VS_Sukutaulu__sukulainen);
-}
-.heppa {
-  composes: global(VS_Sukutaulu__heppa);
-  width: 100%;
-}
-

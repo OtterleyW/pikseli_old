@@ -1,37 +1,7 @@
-import React, { Component, PropTypes as T } from 'react';
+import React, { Component } from 'react';
+import Sukulainen from './Sukulainen';
 
 import styles from './styles/Sukutaulu.css';
-
-class Sukulainen extends Component {
-  static propTypes = {
-    nimi: T.string,
-    children: T.node,
-    polvi: T.number.isRequired,
-    pituus: T.number.isRequired
-  }
-
-  render() {
-    const {nimi, children, polvi, pituus} = this.props;
-
-    return (
-      <div className={styles.sukulainen}>
-        <div className={styles.heppainfo}>
-          <div className={styles.heppa}>
-            {nimi}
-          </div>
-        </div>
-        {children &&
-          <div
-            className={styles.sukuinfo}
-            style={{flexGrow: pituus - polvi}}
-          >
-            {children}
-          </div>
-        }
-      </div>
-    );
-  }
-}
 
 const suvunPituus = (sukuObj, pituus = 0) => {
   const { mother, father } = sukuObj;
