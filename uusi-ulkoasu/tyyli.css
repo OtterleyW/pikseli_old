@@ -370,6 +370,23 @@ hr{
 	height: 100%;
 }
 
+/** Sukutaulun tyylittely */
+
+.VS_Sukutaulu__container {
+  border-top: 1px solid #333;
+  border-left: 1px solid #333;
+}
+.VS_Sukutaulu__heppainfo {
+  border-bottom: 1px solid #333;
+  border-right: 1px solid #333;
+}
+.VS_Sukutaulu__sukulainen {
+  background-color: rgba(0, 100, 0, 0.15);
+}
+.VS_Sukutaulu__heppa {
+  text-align: center;
+}
+
 
 /** Lighboxin määrittelyt **/
 
