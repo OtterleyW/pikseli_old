@@ -1,3 +1,4 @@
+<?php require_once 'asetukset.php' ?>
 <!DOCTYPE html>
 <html lang="fi">
 
