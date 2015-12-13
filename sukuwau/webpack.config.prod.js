@@ -33,7 +33,7 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules'),
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules,sourceMap'),
       include: path.join(__dirname, 'src')
     }]
   }
