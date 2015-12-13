@@ -1,4 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
+import Sukutaulu from './Sukutaulu';
 
-render(<div>Hello, world!</div>, document.getElementById('root'));
+render(<Sukutaulu />, document.getElementById('root'));
