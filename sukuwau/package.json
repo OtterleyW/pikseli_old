@@ -8,7 +8,8 @@
     "build": "npm run clean && npm run build:webpack",
     "start": "node devServer.js",
     "lint": "eslint src",
-    "test": "node test/index.js | faucet"
+    "test": "node test/index.js",
+    "watch": "node test/watch.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "babel-preset-es2015": "6.3.13",
     "babel-preset-react": "6.3.13",
     "babel-register": "6.3.13",
+    "chokidar": "1.4.2",
     "eslint": "1.10.3",
     "eslint-plugin-babel": "3.0.0",
     "eslint-plugin-react": "3.11.3",
@@ -45,9 +47,11 @@
     "glob": "6.0.1",
     "react-transform-catch-errors": "1.0.0",
     "react-transform-hmr": "1.0.1",
+    "really-need": "1.9.0",
     "redbox-react": "1.2.0",
     "rimraf": "2.4.4",
     "tape": "4.2.2",
+    "tape-catch": "1.0.4",
     "webpack": "1.12.9",
     "webpack-dev-middleware": "1.4.0",
     "webpack-hot-middleware": "2.6.0"
