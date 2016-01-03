@@ -8,7 +8,7 @@
     "build": "npm run clean && npm run build:webpack",
     "start": "node devServer.js",
     "lint": "eslint src",
-    "test": "node test"
+    "test": "node test | faucet"
   },
   "repository": {
     "type": "git",
@@ -41,6 +41,7 @@
     "eslint-plugin-babel": "3.0.0",
     "eslint-plugin-react": "3.11.3",
     "express": "4.13.3",
+    "faucet": "0.0.1",
     "glob": "6.0.1",
     "react-transform-catch-errors": "1.0.0",
     "react-transform-hmr": "1.0.1",
