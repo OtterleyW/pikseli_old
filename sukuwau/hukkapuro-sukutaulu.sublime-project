@@ -1,0 +1,33 @@
+{
+  "folders":
+  [
+    {
+      "name": "sukuwau",
+      "path": ".",
+      "follow_symlinks": true,
+      "folder_exclude_patterns": [
+        "tmp",
+        ".git",
+        "node_modules",
+        "dist"
+      ],
+      "file_exclude_patterns": ["*.sublime-workspace", "*.orig"]
+    },
+    {
+      "name": "hukkapuro",
+      "path": "../uusi-ulkoasu",
+      "follow_symlinks": true,
+      "folder_exclude_patterns": [
+        "tmp",
+        ".git",
+        "node_modules",
+        "dist"
+      ],
+      "file_exclude_patterns": ["*.sublime-workspace", "*.orig"]
+    }
+  ],
+  "settings": {
+    "draw_white_space": "all",
+    "rulers": [80, 100]
+  }
+}

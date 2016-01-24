@@ -1,0 +1,5 @@
+:global(.VS_Sukutaulu) {}
+
+.container {
+  composes: global(VS_Sukutaulu);
+}

@@ -1,0 +1,2 @@
+export const SET_FAMILY_TREE = 'SET_FAMILY_TREE';
+export const BROWSE_HORSE = 'BROWSE_HORSE';

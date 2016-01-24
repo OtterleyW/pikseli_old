@@ -1,0 +1,20 @@
+:global(.VS_Jalkelainen) {}
+:global(.VS_Jalkelainen__header) {}
+:global(.VS_Jalkelainen__list) {}
+:global(.VS_Jalkelainen__listItem) {}
+
+.container {
+  composes: global(VS_Jalkelainen);
+}
+
+.header {
+  composes: global(VS_Jalkelainen__header);
+}
+
+.list {
+  composes: global(list);
+}
+.listItem {
+  composes: global(listItem);
+  display: block;
+}

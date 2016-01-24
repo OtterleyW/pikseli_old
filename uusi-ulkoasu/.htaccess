@@ -2,3 +2,4 @@ Options +FollowSymlinks
 RewriteEngine on
 RewriteCond %{REQUEST_URI} !\.[a-z]+$
 RewriteRule ^([^/]+)$ hevonen.php?url=$1 [NC]
+RewriteRule ^suku\/([^/.]+)(\.json)?$ sukutaulu.php?id=$1&json=$2 [NC]

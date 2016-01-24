@@ -2,7 +2,7 @@ body {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 /* Background pattern from subtlepatterns.com */
-	background-image: url('whitediamond.png');
+	background-image: url('/hukkapuro/whitediamond.png');
 	color: #616161;
 	font-size: 13px;
 	line-height: 2.2;
@@ -71,7 +71,7 @@ hr{
 }
 
 .hevosetpanel {
-	background-image: url('img/hevoset.jpg');
+	background-image: url('/hukkapuro/img/hevoset.jpg');
 	background-size: cover;
 	background-position: center;
 	min-height: 400px;
@@ -79,7 +79,7 @@ hr{
 }
 
 .toimintapanel {
-	background-image: url('img/kasvatus.jpg');
+	background-image: url('/hukkapuro/img/kasvatus.jpg');
 	background-size: cover;
 	background-position: center;
 	min-height: 400px;
@@ -87,7 +87,7 @@ hr{
 }
 
 .esittelypanel {
-	background-image: url('img/esittely.jpg');
+	background-image: url('/hukkapuro/img/esittely.jpg');
 	background-size: cover;
 	background-position: center;
 	min-height: 400px;
@@ -370,6 +370,58 @@ hr{
 	height: 100%;
 }
 
+/** Sukutaulun tyylittely */
+
+/**
+ * Kaikkia sukutauluun tiettyihin datoihin liittyviä tyylejä voi muokata.
+ * Esimerkiksi "meriitit" avaimella olevia datoja voi muokata seuraavasti:
+
+.VS_Sukutaulu__data-meriitit {
+	color: pink;
+}
+
+ * Eli kaikki avaimet tulevat aina luokalla:
+ *     .VS_Sukutaulu__data-<AVAIMEN_NIMI_TÄHÄN>
+ */
+
+.VS_Sukutaulu {
+  border-top: 1px solid #333;
+  border-left: 1px solid #333;
+}
+.VS_Sukutaulu__heppainfo {
+  border-bottom: 1px solid #333;
+  border-right: 1px solid #333;
+  padding: 5px;
+  cursor: pointer;
+}
+.VS_Sukutaulu__heppainfo:hover {
+	background-color: rgba(0, 100, 255, 0.25);
+}
+.VS_Sukutaulu__sukulainen {
+  background-color: rgba(0, 100, 0, 0.15);
+}
+.VS_Sukutaulu__tyhja-sukulainen {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.VS_Sukutaulu__tyhja-heppainfo {
+	border-bottom: 1px solid #333;
+	border-right: 1px solid #333;
+	padding: 5px;
+}
+.VS_Sukutaulu__heppa {
+  text-align: center;
+}
+.VS_Sukutaulu__tyhja-heppa {
+  text-align: center;
+}
+
+.VS_Jalkelainen__header {
+	padding-top: 16px;
+	margin-top: 16px;
+	border-top: 1px solid #eee;
+	font-size: 20px;
+}
+
 
 /** Lighboxin määrittelyt **/
 
@@ -396,5 +448,5 @@ hr{
 	background-color: #333;
 	back\ground-color: transparent;
 	background-image: url(blank.gif);
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="overlay.png", sizingMethod="scale");
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/hukkapuro/overlay.png", sizingMethod="scale");
 	}
