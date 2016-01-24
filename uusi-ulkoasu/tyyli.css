@@ -36,6 +36,7 @@ h1 {
 h2 {
 	margin-top: 40px;
 	margin-bottom: 25px;
+	text-align: left;
 }
 
 h3 {
@@ -125,6 +126,7 @@ hr{
 
 .ajankohtaista{
 	line-height: 2.7;
+	text-align: left;
 }
 
 .ajankohtaista h4{
@@ -141,10 +143,13 @@ hr{
 
 
 .hevoslistaus {
-	display: flex;
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 	flex-direction: row;
+	-webkit-justify-content: center;
 	justify-content: center;
 	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
 	align-items: stretch;
 	align-content: stretch;
 }
@@ -190,6 +195,9 @@ hr{
 	background-color: #eeeeee;
 }
 
+.toimintalista li{
+	list-style-type: circle;
+}
 /** Esittely **/
 
 .koristekuvat {
@@ -203,6 +211,7 @@ hr{
 	margin: 10px;
 	border: 1px solid #ddd;
 }
+
 
 /**Footer**/
 
@@ -450,3 +459,19 @@ hr{
 	background-image: url(blank.gif);
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/hukkapuro/overlay.png", sizingMethod="scale");
 	}
+
+	/*** Kutsu ***/
+.kutsu img{
+	margin-left: 50px;
+	float: right;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	max-height: 250px;
+	width: auto;
+}
+
+.palkinto img{
+	height: 150px;
+	width: auto;
+	border: 0px;
+}
