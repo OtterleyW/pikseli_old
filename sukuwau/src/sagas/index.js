@@ -10,9 +10,14 @@ const headers = new Headers({
 });
 
 function* fetchHorse(path) {
-  const response = yield fetch(path, {headers});
-  const json = yield response.json();
-  yield put(setFamilyTree(json));
+  try {
+    const response = yield fetch(path, {headers});
+    const json = yield response.json();
+    yield put(setFamilyTree(json));
+  }
+  catch (e) {
+    console.error(e);
+  }
 }
 
 function* browseHorseDaemon() {
