@@ -5,11 +5,11 @@
 ?>
 
 <?php
-	function hae_tiedot($url, $db){
+	function hae_tiedot($id, $db){
 		//Perustietojen hakeminen
-		$stmt = $db->prepare('SELECT * FROM hevonen_tiedot WHERE url = :url');
-		$stmt->bindParam(':url', $hevonen_url);
-		$hevonen_url = $url;
+		$stmt = $db->prepare('SELECT * FROM hevonen_tiedot WHERE id = :id');
+		$stmt->bindParam(':id', $hevonen_id);
+		$hevonen_id = $id;
 		$stmt->execute();
 		$haettu_tiedot = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -29,8 +29,8 @@
 
 	function serialisoitava_suku($heppa) {
 		$return = array(
-			'name' => $heppa->nimi,
-			'url' => $heppa->url
+			'id' => $heppa->id,
+			'name' => $heppa->nimi
 		);
 		if (isset($heppa->isa)) {
 			$return['father'] = serialisoitava_suku($heppa->isa);
@@ -41,7 +41,7 @@
 		return $return;
 	}
 
-	$heppa = hae_tiedot('monte-rosa-thrill', $db);
+	$heppa = hae_tiedot($_GET['id'], $db);
 ?>
 
 <script>
