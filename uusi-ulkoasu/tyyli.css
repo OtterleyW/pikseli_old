@@ -388,7 +388,18 @@ hr{
 .VS_Sukutaulu__sukulainen {
   background-color: rgba(0, 100, 0, 0.15);
 }
+.VS_Sukutaulu__tyhja-sukulainen {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.VS_Sukutaulu__tyhja-heppainfo {
+	border-bottom: 1px solid #333;
+	border-right: 1px solid #333;
+	padding: 5px;
+}
 .VS_Sukutaulu__heppa {
+  text-align: center;
+}
+.VS_Sukutaulu__tyhja-heppa {
   text-align: center;
 }
 

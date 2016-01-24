@@ -22,7 +22,15 @@ const mapStateToProps = (state) => ({
 export class SukutauluUI extends Component {
   render() {
     const { suku } = this.props;
-    const pituus = suvunPituus(suku);
+    const maxPituus = suvunPituus(suku);
+    let pituus = 4;
+
+    if (pituus > maxPituus) {
+      console.error(
+        `Haluamasi pituus (${pituus}) ylitti palvelimelta tulleen maksimipituuden (${maxPituus}).`
+      );
+      pituus = maxPituus;
+    }
 
     return (
       <div className={styles.container}>
@@ -31,19 +39,18 @@ export class SukutauluUI extends Component {
     );
   }
 
-  _renderHeppa(heppa, pituus, polvi = 0) {
+  _renderHeppa(heppa, pituus, polvi = 0, isMother = false) {
     const { name: nimi, father, mother, id } = heppa;
 
-    if (father && mother) {
+    const key = `${id}-${polvi}-${isMother ? 'm' : 'f'}`;
+
+    if (polvi < pituus + 1) {
       return (
-        <Sukulainen nimi={nimi} polvi={polvi} pituus={pituus} id={id} key={id}>
-          {this._renderHeppa(father, pituus, polvi + 1)}
-          {this._renderHeppa(mother, pituus, polvi + 1)}
+        <Sukulainen nimi={nimi} polvi={polvi} pituus={pituus} id={id} key={key}>
+          {this._renderHeppa(father || {}, pituus, polvi + 1, false)}
+          {this._renderHeppa(mother || {}, pituus, polvi + 1, true)}
         </Sukulainen>
       );
-    }
-    else {
-      return <Sukulainen nimi={nimi} polvi={polvi} pituus={pituus} id={id} key={id} />;
     }
   }
 }

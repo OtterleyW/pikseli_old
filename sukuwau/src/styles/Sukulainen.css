@@ -1,8 +1,12 @@
 :global(.VS_Sukutaulu__heppainfo) {}
 :global(.VS_Sukutaulu__sukulainen) {}
 :global(.VS_Sukutaulu__heppa) {}
+:global(.VS_Sukutaulu__tyhja-sukulainen) {}
+:global(.VS_Sukutaulu__tyhja-heppainfo) {}
+:global(.VS_Sukutaulu__tyhja-heppa) {}
 
 .sukulainen {
+  composes: global(VS_Sukutaulu__sukulainen);
   display: flex;
   flex-direction: row;
   flex-grow: 1;
@@ -18,11 +22,24 @@
   flex-direction: column;
   flex-grow: 1;
 }
-.sukulainen {
-  composes: global(VS_Sukutaulu__sukulainen);
+.tyhjaSukulainen {
+  composes: global(VS_Sukutaulu__tyhja-sukulainen);
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+.tyhjaHeppainfo {
+  composes: global(VS_Sukutaulu__tyhja-heppainfo);
+  display: flex;
+  flex-grow: 1;
+  width: 1px;
 }
 .heppa {
   composes: global(VS_Sukutaulu__heppa);
+  width: 100%;
+}
+.tyhjaHeppa {
+  composes: global(VS_Sukutaulu__tyhja-heppa);
   width: 100%;
 }
 
