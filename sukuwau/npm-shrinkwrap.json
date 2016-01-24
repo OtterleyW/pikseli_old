@@ -406,6 +406,30 @@
       },
       "version": "0.23.0"
     },
+    "exports-loader": {
+      "dependencies": {
+        "loader-utils": {
+          "dependencies": {
+            "big.js": {
+              "version": "3.1.3"
+            },
+            "json5": {
+              "version": "0.4.0"
+            }
+          },
+          "version": "0.2.12"
+        },
+        "source-map": {
+          "dependencies": {
+            "amdefine": {
+              "version": "1.0.0"
+            }
+          },
+          "version": "0.1.43"
+        }
+      },
+      "version": "0.6.2"
+    },
     "extract-text-webpack-plugin": {
       "dependencies": {
         "async": {
@@ -424,6 +448,30 @@
         }
       },
       "version": "0.9.1"
+    },
+    "imports-loader": {
+      "dependencies": {
+        "loader-utils": {
+          "dependencies": {
+            "big.js": {
+              "version": "3.1.3"
+            },
+            "json5": {
+              "version": "0.4.0"
+            }
+          },
+          "version": "0.2.12"
+        },
+        "source-map": {
+          "dependencies": {
+            "amdefine": {
+              "version": "1.0.0"
+            }
+          },
+          "version": "0.1.43"
+        }
+      },
+      "version": "0.6.5"
     },
     "react": {
       "dependencies": {
