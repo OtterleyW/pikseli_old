@@ -43,6 +43,7 @@
   composes: global(VS_Sukutaulu__tyhja-heppa);
   width: 100%;
 }
+
 .url {
   display: block;
 }

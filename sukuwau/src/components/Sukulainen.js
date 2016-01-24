@@ -4,6 +4,7 @@ import React, { Component, PropTypes as T } from 'react';
 import { connect } from 'react-redux';
 import { browseHorse } from '../actions';
 
+import Jalkelaiset from './Jalkelaiset';
 import styles from './styles/Sukulainen.css';
 
 const mapStateToProps = (state) => ({
@@ -11,8 +12,8 @@ const mapStateToProps = (state) => ({
   urlKey: state.horses.url_key
 });
 
-const mapDispatchToProps = (dispatch, props) => ({
-  katsoHeppaa: () => dispatch(browseHorse(props.id))
+const mapDispatchToProps = (dispatch) => ({
+  katsoHeppaa: (id) => dispatch(browseHorse(id))
 });
 
 const renderData = ({avaimet, data, url, urlKey}) => (
@@ -34,17 +35,35 @@ const renderData = ({avaimet, data, url, urlKey}) => (
   ))
 );
 
-const renderHeppa = ({avaimet, data, url, urlKey, children, polvi, pituus, katsoHeppaa}) => (
+const renderHeppa = ({
+  avaimet,
+  jalkelaiset,
+  id,
+  data,
+  url,
+  urlKey,
+  children,
+  polvi,
+  pituus,
+  katsoHeppaa
+}) => (
   <div className={styles.sukulainen}>
     <div
       className={styles.heppainfo}
       onClick={
-        (evt) => { evt.target.tagName === 'A' ? void 0 : katsoHeppaa(); }
+        (evt) => { evt.target.tagName === 'A' ? void 0 : katsoHeppaa(id); }
       }
     >
       <div className={styles.heppa}>
         {renderData({avaimet, data, url, urlKey})}
+        {jalkelaiset && Jalkelaiset({
+          jalkelaiset,
+          urlKey,
+          onClickJalkelainen: katsoHeppaa
+        })}
+
       </div>
+
     </div>
     {children &&
       <div
@@ -83,6 +102,7 @@ export class SukulainenUI extends Component {
     children: T.node,
     polvi: T.number.isRequired,
     pituus: T.number.isRequired,
+    jalkelaiset: T.object,
     katsoHeppaa: T.func.isRequired
   }
 

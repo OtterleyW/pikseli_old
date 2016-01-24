@@ -1,0 +1,24 @@
+:global(.VS_Jalkelainen) {}
+:global(.VS_Jalkelainen__header) {}
+:global(.VS_Jalkelainen__list) {}
+:global(.VS_Jalkelainen__listItem) {}
+
+.container {
+  composes: global(VS_Jalkelainen);
+}
+
+.header {
+  composes: global(VS_Jalkelainen__header);
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid #eee;
+  font-size: 20px;
+}
+
+.list {
+  composes: global(list);
+}
+.listItem {
+  display: block;
+  composes: global(listItem);
+}

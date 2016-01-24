@@ -47,7 +47,24 @@
 		return $return;
 	}
 
-	function suku_json($heppa) {
+	function hae_lapset($heppa, $db) {
+		$stmt = $db->prepare('SELECT id FROM hevonen_suku WHERE isa_id = :id OR ema_id = :id');
+		$stmt->bindValue(':id', $heppa->id);
+		$stmt->execute();
+		$lapsien_idt = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+		$lapset_id_str = join(', ', $lapsien_idt);
+		$rows = $db->query("SELECT * FROM hevonen_tiedot WHERE id IN ($lapset_id_str)");
+
+		$lapset = array();
+		foreach($rows as $lapsi) {
+			$lapset[] = serialisoitava_suku(new Heppa($lapsi));
+		}
+
+		return $lapset;
+	}
+
+	function suku_json($heppa, $lapset) {
 		$data = serialisoitava_suku($heppa);
 		$avaimet = array(
 			'nimi',
@@ -56,7 +73,8 @@
 		return json_encode(array(
 			'keys' => $avaimet,
 			'url_key' => 'nimi',
-			'tree' => $data
+			'tree' => $data,
+			'descendants' => $lapset
 		));
 	}
 
@@ -67,16 +85,18 @@
 		die('Heppa ei löytynyt');
 	}
 
+	$jalkelaiset = hae_lapset($heppa, $db);
+
 	if ($_GET['json']) {
 		header('Content-Type: application/json');
-		die(suku_json($heppa));
+		die(suku_json($heppa, $jalkelaiset));
 	}
 
 	require('yla.php');
 ?>
 
 <script>
-window.VS_SUKU_JSON = <?= suku_json($heppa) ?>;
+window.VS_SUKU_JSON = <?= suku_json($heppa, $jalkelaiset) ?>;
 </script>
 
 <div id="vs-sukutaulu-root"></div>
