@@ -12,8 +12,8 @@ export default function configureStore(initialState) {
 
   const finalCreateStore = compose(
     applyMiddleware(
-      reduxRouterMiddleware,
-      sagaMiddleware(...sagas)
+      sagaMiddleware(...sagas),
+      reduxRouterMiddleware
     ),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )(createStore);
