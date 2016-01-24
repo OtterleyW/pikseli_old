@@ -27,18 +27,18 @@ export default class Sukutaulu extends Component {
   }
 
   _renderHeppa(heppa, pituus, polvi = 0) {
-    const { name: nimi, father, mother } = heppa;
+    const { name: nimi, father, mother, id } = heppa;
 
     if (father && mother) {
       return (
-        <Sukulainen nimi={nimi} polvi={polvi} pituus={pituus} key={nimi}>
+        <Sukulainen nimi={nimi} polvi={polvi} pituus={pituus} key={id}>
           {this._renderHeppa(father, pituus, polvi + 1)}
           {this._renderHeppa(mother, pituus, polvi + 1)}
         </Sukulainen>
       );
     }
     else {
-      return <Sukulainen nimi={nimi} polvi={polvi} pituus={pituus} key={nimi} />;
+      return <Sukulainen nimi={nimi} polvi={polvi} pituus={pituus} key={id} />;
     }
   }
 }
