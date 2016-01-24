@@ -380,6 +380,10 @@ hr{
   border-bottom: 1px solid #333;
   border-right: 1px solid #333;
   padding: 5px;
+  cursor: pointer;
+}
+.VS_Sukutaulu__heppainfo:hover {
+	background-color: rgba(0, 100, 255, 0.25);
 }
 .VS_Sukutaulu__sukulainen {
   background-color: rgba(0, 100, 0, 0.15);

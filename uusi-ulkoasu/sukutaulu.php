@@ -74,8 +74,8 @@ window.VS_SUKU_JSON = <?= json_encode(serialisoitava_suku($heppa)) ?>;
 <?
 	} else {
 ?>
-		<link rel="stylesheet" href="sukutaulu/main.css" />
-		<script src="sukutaulu/bundle.js"></script>
+		<link rel="stylesheet" href="/hukkapuro/sukutaulu/main.css" />
+		<script src="/hukkapuro/sukutaulu/bundle.js"></script>
 <?
 	}
 ?>

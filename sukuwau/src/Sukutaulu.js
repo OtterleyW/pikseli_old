@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Sukulainen from './Sukulainen';
 
 import styles from './styles/Sukutaulu.css';
@@ -14,7 +15,11 @@ const suvunPituus = (sukuObj, pituus = 0) => {
   return pituus;
 };
 
-export default class Sukutaulu extends Component {
+const mapStateToProps = (state) => ({
+  suku: state
+});
+
+export class SukutauluUI extends Component {
   render() {
     const { suku } = this.props;
     const pituus = suvunPituus(suku);
@@ -31,14 +36,16 @@ export default class Sukutaulu extends Component {
 
     if (father && mother) {
       return (
-        <Sukulainen nimi={nimi} polvi={polvi} pituus={pituus} key={id}>
+        <Sukulainen nimi={nimi} polvi={polvi} pituus={pituus} id={id} key={id}>
           {this._renderHeppa(father, pituus, polvi + 1)}
           {this._renderHeppa(mother, pituus, polvi + 1)}
         </Sukulainen>
       );
     }
     else {
-      return <Sukulainen nimi={nimi} polvi={polvi} pituus={pituus} key={id} />;
+      return <Sukulainen nimi={nimi} polvi={polvi} pituus={pituus} id={id} key={id} />;
     }
   }
 }
+
+export default connect(mapStateToProps)(SukutauluUI);
