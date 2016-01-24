@@ -372,6 +372,18 @@ hr{
 
 /** Sukutaulun tyylittely */
 
+/**
+ * Kaikkia sukutauluun tiettyihin datoihin liittyviä tyylejä voi muokata.
+ * Esimerkiksi "meriitit" avaimella olevia datoja voi muokata seuraavasti:
+
+.VS_Sukutaulu__data-meriitit {
+	color: pink;
+}
+
+ * Eli kaikki avaimet tulevat aina luokalla:
+ *     .VS_Sukutaulu__data-<AVAIMEN_NIMI_TÄHÄN>
+ */
+
 .VS_Sukutaulu {
   border-top: 1px solid #333;
   border-left: 1px solid #333;
@@ -401,6 +413,13 @@ hr{
 }
 .VS_Sukutaulu__tyhja-heppa {
   text-align: center;
+}
+
+.VS_Jalkelainen__header {
+	padding-top: 16px;
+	margin-top: 16px;
+	border-top: 1px solid #eee;
+	font-size: 20px;
 }
 
 
