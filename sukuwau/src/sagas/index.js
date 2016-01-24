@@ -25,7 +25,7 @@ function* browseHorseDaemon() {
 function* historyDaemon() {
   while (true) {
     const { payload } = yield take(UPDATE_LOCATION);
-    yield call(fetchHorse, payload.pathname);
+    yield call(fetchHorse, `${payload.pathname}.json`);
   }
 }
 

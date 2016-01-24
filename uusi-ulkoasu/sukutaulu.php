@@ -45,14 +45,13 @@
 		die('Heppa ei löytynyt');
 	}
 
-	if ($_SERVER["CONTENT_TYPE"] === 'application/json') {
+	if ($_GET['json']) {
 		header('Content-Type: application/json');
 		die(json_encode(serialisoitava_suku($heppa)));
 	}
 
 	require('yla.php');
 ?>
-
 
 <script>
 window.VS_SUKU_JSON = <?= json_encode(serialisoitava_suku($heppa)) ?>;
