@@ -28,9 +28,16 @@
 		$return = array(
 			'id' => $heppa->id,
 			'data' => array(
-				'nimi' => $heppa->nimi
+				'nimi' => $heppa->nimi,
+				'rotu' => $heppa->rotu
 			)
 		);
+		// Täytyy taistella sitä vastaan, kun URLit on tallennettu
+		// hieman eri tavalla omille hevosille :'(
+		if (strncasecmp($heppa->url, 'http', 4) === 0) {
+			$return['url'] = $heppa->url;
+		}
+
 		if (isset($heppa->isa)) {
 			$return['father'] = serialisoitava_suku($heppa->isa);
 		}
@@ -43,10 +50,12 @@
 	function suku_json($heppa) {
 		$data = serialisoitava_suku($heppa);
 		$avaimet = array(
-			'nimi'
+			'nimi',
+			'rotu'
 		);
 		return json_encode(array(
 			'keys' => $avaimet,
+			'url_key' => 'nimi',
 			'tree' => $data
 		));
 	}

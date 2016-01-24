@@ -4,6 +4,7 @@
 :global(.VS_Sukutaulu__tyhja-sukulainen) {}
 :global(.VS_Sukutaulu__tyhja-heppainfo) {}
 :global(.VS_Sukutaulu__tyhja-heppa) {}
+:global(.VS_Sukutaulu__url) {}
 
 .sukulainen {
   composes: global(VS_Sukutaulu__sukulainen);
@@ -42,4 +43,6 @@
   composes: global(VS_Sukutaulu__tyhja-heppa);
   width: 100%;
 }
-
+.url {
+  display: block;
+}

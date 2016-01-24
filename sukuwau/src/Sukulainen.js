@@ -7,22 +7,35 @@ import { browseHorse } from './actions';
 import styles from './styles/Sukulainen.css';
 
 const mapStateToProps = (state) => ({
-  avaimet: state.horses.keys
+  avaimet: state.horses.keys,
+  urlKey: state.horses.url_key
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
   katsoHeppaa: () => dispatch(browseHorse(props.id))
 });
 
-const renderHeppa = ({avaimet, data, children, polvi, pituus, katsoHeppaa}) => (
+const renderData = ({avaimet, data, url, urlKey}) => (
+  avaimet.map((avain) => (
+    avain === urlKey ?
+      <a className={styles.url} href={url}>{data[avain]}</a>
+      :
+      <div className={`VS_Sukutaulu__data-${avain}`} key={avain}>
+        {data[avain]}
+      </div>
+  ))
+);
+
+const renderHeppa = ({avaimet, data, url, urlKey, children, polvi, pituus, katsoHeppaa}) => (
   <div className={styles.sukulainen}>
-    <div className={styles.heppainfo} onClick={katsoHeppaa}>
+    <div
+      className={styles.heppainfo}
+      onClick={
+        (evt) => { evt.target.tagName === 'A' ? void 0 : katsoHeppaa(); }
+      }
+    >
       <div className={styles.heppa}>
-        {avaimet.map((avain) => (
-          <div className={`VS_Sukutaulu__data-${avain}`} key={avain}>
-            {data[avain]}
-          </div>
-        ))}
+        {renderData({avaimet, data, url, urlKey})}
       </div>
     </div>
     {children &&
@@ -58,6 +71,7 @@ export class SukulainenUI extends Component {
   static propTypes = {
     id: T.oneOfType([T.number, T.string]),
     data: T.object.isRequired,
+    url: T.string,
     children: T.node,
     polvi: T.number.isRequired,
     pituus: T.number.isRequired,
