@@ -1,10 +1,7 @@
 <?php
 	require('.yhdista.php');
 	require('luokat/Heppa.php');
-	require('yla.php');
-?>
 
-<?php
 	function hae_tiedot($id, $db){
 		//Perustietojen hakeminen
 		$stmt = $db->prepare('SELECT * FROM hevonen_tiedot WHERE id = :id');
@@ -42,7 +39,15 @@
 	}
 
 	$heppa = hae_tiedot($_GET['id'], $db);
+
+	if ($heppa->id == null) {
+		header("HTTP/1.0 404 Not Found");
+		die('Heppa ei löytynyt');
+	}
+
+	require('yla.php');
 ?>
+
 
 <script>
 window.VS_SUKU_JSON = <?= json_encode(serialisoitava_suku($heppa)) ?>;
