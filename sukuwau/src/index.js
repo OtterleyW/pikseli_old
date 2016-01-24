@@ -2,7 +2,7 @@ import 'babel-polyfill';
 
 import React from 'react';
 import { render } from 'react-dom';
-import Sukutaulu from './Sukutaulu';
+import Sukutaulu from './components/Sukutaulu';
 import configureStore from './configureStore';
 
 import { Provider } from 'react-redux';

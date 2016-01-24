@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes as T } from 'react';
 import { connect } from 'react-redux';
-import { browseHorse } from './actions';
+import { browseHorse } from '../actions';
 
 import styles from './styles/Sukulainen.css';
 
