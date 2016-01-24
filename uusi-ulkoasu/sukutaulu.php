@@ -29,7 +29,9 @@
 			'id' => $heppa->id,
 			'data' => array(
 				'nimi' => $heppa->nimi,
-				'rotu' => $heppa->rotu
+				'rotu' => $heppa->rotu,
+				'meriitit' => $heppa->meriitit,
+				'status' => $heppa->status
 			)
 		);
 		// Täytyy taistella sitä vastaan, kun URLit on tallennettu
@@ -68,7 +70,9 @@
 		$data = serialisoitava_suku($heppa);
 		$avaimet = array(
 			'nimi',
-			'rotu'
+			'rotu',
+			'meriitit',
+			'status'
 		);
 		return json_encode(array(
 			'keys' => $avaimet,
