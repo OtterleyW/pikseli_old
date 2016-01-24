@@ -1,10 +1,10 @@
 import {
-  SET_INITIAL_FAMILY_TREE,
+  SET_FAMILY_TREE,
   BROWSE_HORSE
 } from './constants';
 
-export const setInitialFamilyTree = (tree) => ({
-  type: SET_INITIAL_FAMILY_TREE,
+export const setFamilyTree = (tree) => ({
+  type: SET_FAMILY_TREE,
   payload: tree
 });
 

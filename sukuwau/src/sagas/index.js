@@ -1,7 +1,7 @@
 /* eslint-disable no-constant-condition */
 
 import { BROWSE_HORSE } from '../constants';
-import { setInitialFamilyTree } from '../actions';
+import { setFamilyTree } from '../actions';
 import { UPDATE_LOCATION, routeActions } from 'redux-simple-router';
 import { take, put, call } from 'redux-saga';
 
@@ -12,7 +12,7 @@ const headers = new Headers({
 function* fetchHorse(path) {
   const response = yield fetch(path, {headers});
   const json = yield response.json();
-  yield put(setInitialFamilyTree(json));
+  yield put(setFamilyTree(json));
 }
 
 function* browseHorseDaemon() {
