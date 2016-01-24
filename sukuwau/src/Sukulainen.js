@@ -22,6 +22,7 @@ const renderData = ({avaimet, data, url, urlKey}) => (
         className={
           `${styles.url} VS_Sukutaulu__data-${avain}`
         }
+        key={avain}
         href={url}
       >
         {data[avain]}
