@@ -78,7 +78,7 @@ const renderTyhja = ({children, pituus, polvi}) => (
 export class SukulainenUI extends Component {
   static propTypes = {
     id: T.oneOfType([T.number, T.string]),
-    data: T.object.isRequired,
+    data: T.object,
     url: T.string,
     children: T.node,
     polvi: T.number.isRequired,
