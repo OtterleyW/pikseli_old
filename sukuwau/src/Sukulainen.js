@@ -17,8 +17,15 @@ const mapDispatchToProps = (dispatch, props) => ({
 
 const renderData = ({avaimet, data, url, urlKey}) => (
   avaimet.map((avain) => (
-    avain === urlKey ?
-      <a className={styles.url} href={url}>{data[avain]}</a>
+    (url && avain === urlKey) ?
+      <a
+        className={
+          `${styles.url} VS_Sukutaulu__data-${avain}`
+        }
+        href={url}
+      >
+        {data[avain]}
+      </a>
       :
       <div className={`VS_Sukutaulu__data-${avain}`} key={avain}>
         {data[avain]}
