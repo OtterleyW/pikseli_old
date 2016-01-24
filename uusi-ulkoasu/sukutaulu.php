@@ -27,7 +27,9 @@
 	function serialisoitava_suku($heppa) {
 		$return = array(
 			'id' => $heppa->id,
-			'name' => $heppa->nimi
+			'data' => array(
+				'nimi' => $heppa->nimi
+			)
 		);
 		if (isset($heppa->isa)) {
 			$return['father'] = serialisoitava_suku($heppa->isa);
@@ -36,6 +38,17 @@
 			$return['mother'] = serialisoitava_suku($heppa->ema);
 		}
 		return $return;
+	}
+
+	function suku_json($heppa) {
+		$data = serialisoitava_suku($heppa);
+		$avaimet = array(
+			'nimi'
+		);
+		return json_encode(array(
+			'keys' => $avaimet,
+			'tree' => $data
+		));
 	}
 
 	$heppa = hae_tiedot($_GET['id'], $db);
@@ -47,14 +60,14 @@
 
 	if ($_GET['json']) {
 		header('Content-Type: application/json');
-		die(json_encode(serialisoitava_suku($heppa)));
+		die(suku_json($heppa));
 	}
 
 	require('yla.php');
 ?>
 
 <script>
-window.VS_SUKU_JSON = <?= json_encode(serialisoitava_suku($heppa)) ?>;
+window.VS_SUKU_JSON = <?= suku_json($heppa) ?>;
 </script>
 
 <div id="vs-sukutaulu-root"></div>

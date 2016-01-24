@@ -7,7 +7,7 @@ import styles from './styles/Sukutaulu.css';
 const SUVUN_PITUUS = window.VS_SUKU_PITUUS || 4;
 
 const mapStateToProps = (state) => ({
-  suku: state.horses
+  suku: state.horses.tree
 });
 
 export class SukutauluUI extends Component {
@@ -22,13 +22,13 @@ export class SukutauluUI extends Component {
   }
 
   _renderHeppa(heppa, polvi = 0, isMother = false) {
-    const { name: nimi, father, mother, id } = heppa;
+    const { data, father, mother, id } = heppa;
 
     const key = `${id}-${polvi}-${isMother ? 'm' : 'f'}`;
 
     if (polvi < SUVUN_PITUUS + 1) {
       return (
-        <Sukulainen nimi={nimi} polvi={polvi} pituus={SUVUN_PITUUS} id={id} key={key}>
+        <Sukulainen data={data} polvi={polvi} pituus={SUVUN_PITUUS} id={id} key={key}>
           {this._renderHeppa(father || {}, polvi + 1, false)}
           {this._renderHeppa(mother || {}, polvi + 1, true)}
         </Sukulainen>

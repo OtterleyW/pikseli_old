@@ -6,15 +6,23 @@ import { browseHorse } from './actions';
 
 import styles from './styles/Sukulainen.css';
 
+const mapStateToProps = (state) => ({
+  avaimet: state.horses.keys
+});
+
 const mapDispatchToProps = (dispatch, props) => ({
   katsoHeppaa: () => dispatch(browseHorse(props.id))
 });
 
-const renderHeppa = ({id, nimi, children, polvi, pituus, katsoHeppaa}) => (
+const renderHeppa = ({avaimet, data, children, polvi, pituus, katsoHeppaa}) => (
   <div className={styles.sukulainen}>
     <div className={styles.heppainfo} onClick={katsoHeppaa}>
       <div className={styles.heppa}>
-        {nimi}
+        {avaimet.map((avain) => (
+          <div className={`VS_Sukutaulu__data-${avain}`} key={avain}>
+            {data[avain]}
+          </div>
+        ))}
       </div>
     </div>
     {children &&
@@ -49,7 +57,7 @@ const renderTyhja = ({children, pituus, polvi}) => (
 export class SukulainenUI extends Component {
   static propTypes = {
     id: T.oneOfType([T.number, T.string]),
-    nimi: T.string,
+    data: T.object.isRequired,
     children: T.node,
     polvi: T.number.isRequired,
     pituus: T.number.isRequired,
@@ -68,4 +76,4 @@ export class SukulainenUI extends Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(SukulainenUI);
+export default connect(mapStateToProps, mapDispatchToProps)(SukulainenUI);
