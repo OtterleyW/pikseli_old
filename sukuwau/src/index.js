@@ -7,7 +7,7 @@ import configureStore from './configureStore';
 
 import { Provider } from 'react-redux';
 
-const store = configureStore(window.VS_SUKU_JSON);
+const store = configureStore({ horses: window.VS_SUKU_JSON });
 
 render(
   <Provider store={store}>

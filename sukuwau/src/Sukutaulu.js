@@ -16,7 +16,7 @@ const suvunPituus = (sukuObj, pituus = 0) => {
 };
 
 const mapStateToProps = (state) => ({
-  suku: state
+  suku: state.horses
 });
 
 export class SukutauluUI extends Component {

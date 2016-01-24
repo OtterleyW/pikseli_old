@@ -1,12 +1,6 @@
-import {
-  SET_INITIAL_FAMILY_TREE
-} from '../constants';
+import { combineReducers } from 'redux';
+import horses from './horses';
 
-export default (state, action) => {
-  switch (action.type) {
-    case SET_INITIAL_FAMILY_TREE:
-      return action.payload;
-    default:
-      return state;
-  }
-};
+export default combineReducers({
+  horses
+});
