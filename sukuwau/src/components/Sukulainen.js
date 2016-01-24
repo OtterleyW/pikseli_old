@@ -56,12 +56,14 @@ const renderHeppa = ({
     >
       <div className={styles.heppa}>
         {renderData({avaimet, data, url, urlKey})}
-        {jalkelaiset && Jalkelaiset({
-          jalkelaiset,
-          urlKey,
-          onClickJalkelainen: katsoHeppaa
-        })}
-
+        {(jalkelaiset && jalkelaiset.length) ?
+          Jalkelaiset({
+            jalkelaiset,
+            urlKey,
+            onClickJalkelainen: katsoHeppaa
+          }) :
+          null
+        }
       </div>
 
     </div>
@@ -102,7 +104,7 @@ export class SukulainenUI extends Component {
     children: T.node,
     polvi: T.number.isRequired,
     pituus: T.number.isRequired,
-    jalkelaiset: T.object,
+    jalkelaiset: T.array.isRequired,
     katsoHeppaa: T.func.isRequired
   }
 

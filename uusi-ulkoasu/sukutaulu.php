@@ -55,6 +55,10 @@
 		$stmt->execute();
 		$lapsien_idt = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
+		if (empty($lapsien_idt)) {
+			return array();
+		}
+
 		$lapset_id_str = join(', ', $lapsien_idt);
 		$rows = $db->query("SELECT * FROM hevonen_tiedot WHERE id IN ($lapset_id_str)");
 
