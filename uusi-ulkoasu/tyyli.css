@@ -2,7 +2,7 @@ body {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 /* Background pattern from subtlepatterns.com */
-	background-image: url('whitediamond.png');
+	background-image: url('/hukkapuro/whitediamond.png');
 	color: #616161;
 	font-size: 13px;
 	line-height: 2.2;
@@ -71,7 +71,7 @@ hr{
 }
 
 .hevosetpanel {
-	background-image: url('img/hevoset.jpg');
+	background-image: url('/hukkapuro/img/hevoset.jpg');
 	background-size: cover;
 	background-position: center;
 	min-height: 400px;
@@ -79,7 +79,7 @@ hr{
 }
 
 .toimintapanel {
-	background-image: url('img/kasvatus.jpg');
+	background-image: url('/hukkapuro/img/kasvatus.jpg');
 	background-size: cover;
 	background-position: center;
 	min-height: 400px;
@@ -87,7 +87,7 @@ hr{
 }
 
 .esittelypanel {
-	background-image: url('img/esittely.jpg');
+	background-image: url('/hukkapuro/img/esittely.jpg');
 	background-size: cover;
 	background-position: center;
 	min-height: 400px;
@@ -414,5 +414,5 @@ hr{
 	background-color: #333;
 	back\ground-color: transparent;
 	background-image: url(blank.gif);
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="overlay.png", sizingMethod="scale");
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/hukkapuro/overlay.png", sizingMethod="scale");
 	}
