@@ -39,8 +39,10 @@
 		// hieman eri tavalla omille hevosille :'(
 		if (strncasecmp($heppa->url, 'http', 4) === 0) {
 			$return['url'] = $heppa->url;
-		} else {
+			$return['data']['linkki'] = 'Hevosen sivulle';
+		} elseif ($heppa->url) {
 			$return['url'] = '/hukkapuro/' . $heppa->url;
+			$return['data']['linkki'] = 'Hevosen sivulle';
 		}
 
 		if (isset($heppa->isa)) {
