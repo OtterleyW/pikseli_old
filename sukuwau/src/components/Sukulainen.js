@@ -51,7 +51,7 @@ const renderHeppa = ({
 }) => (
   <div className={styles.sukulainen}>
     <div
-      className={styles.heppainfo}
+      className={`${styles.heppainfo} VS_Sukutaulu__polvi-${polvi}`}
       onClick={
         (evt) => { evt.target.tagName === 'A' ? void 0 : katsoHeppaa(id); }
       }
@@ -82,7 +82,7 @@ const renderHeppa = ({
 
 const renderTyhja = ({children, pituus, polvi}) => (
   <div className={styles.tyhjaSukulainen}>
-    <div className={styles.tyhjaHeppainfo}>
+    <div className={`${styles.tyhjaHeppainfo} VS_Sukutaulu__polvi-${polvi}`}>
       <div className={styles.tyhjaHeppa}>
         Tuntematon
       </div>
