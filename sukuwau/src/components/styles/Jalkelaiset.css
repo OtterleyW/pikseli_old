@@ -12,9 +12,9 @@
 }
 
 .list {
-  composes: global(list);
+  composes: global(VS_Jalkelainen__list);
 }
 .listItem {
-  composes: global(listItem);
+  composes: global(VS_Jalkelainen__listItem);
   display: block;
 }
