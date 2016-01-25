@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles/Jalkelaiset.css';
 
-export default ({jalkelaiset, urlKey, onClickJalkelainen}) => (
+export default ({jalkelaiset, descendantKey, onClickJalkelainen}) => (
   <div className={styles.container}>
     <div className={styles.header}>Jälkeläiset</div>
     <div className={styles.list}>
@@ -11,7 +11,7 @@ export default ({jalkelaiset, urlKey, onClickJalkelainen}) => (
             onClickJalkelainen(id);
           }
         }>
-          {data[urlKey]}
+          {data[descendantKey]}
         </a>
       ))}
     </div>

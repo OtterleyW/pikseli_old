@@ -9,7 +9,8 @@ import styles from './styles/Sukulainen.css';
 
 const mapStateToProps = (state) => ({
   avaimet: state.horses.keys,
-  urlKey: state.horses.url_key
+  urlKey: state.horses.url_key,
+  descendantKey: state.horses.descendant_key
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -42,6 +43,7 @@ const renderHeppa = ({
   data,
   url,
   urlKey,
+  descendantKey,
   children,
   polvi,
   pituus,
@@ -59,7 +61,7 @@ const renderHeppa = ({
         {(jalkelaiset && jalkelaiset.length) ?
           Jalkelaiset({
             jalkelaiset,
-            urlKey,
+            descendantKey,
             onClickJalkelainen: katsoHeppaa
           }) :
           null

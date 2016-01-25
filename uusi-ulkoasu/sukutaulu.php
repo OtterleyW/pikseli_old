@@ -31,7 +31,8 @@
 				'nimi' => $heppa->nimi,
 				'rotu' => $heppa->rotu,
 				'meriitit' => $heppa->meriitit,
-				'status' => $heppa->status
+				'status' => $heppa->status,
+				'linkki' => 'Hevosen sivulle'
 			)
 		);
 		// Täytyy taistella sitä vastaan, kun URLit on tallennettu
@@ -78,11 +79,13 @@
 			'nimi',
 			'rotu',
 			'meriitit',
-			'status'
+			'status',
+			'linkki'
 		);
 		return json_encode(array(
 			'keys' => $avaimet,
-			'url_key' => 'nimi',
+			'url_key' => 'linkki',
+			'descendant_key' => 'nimi',
 			'tree' => $data,
 			'descendants' => $lapset
 		));
