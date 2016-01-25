@@ -406,6 +406,12 @@ hr{
 .VS_Sukutaulu__heppainfo:hover {
 	background-color: rgba(0, 100, 255, 0.25);
 }
+.VS_Sukutaulu__polvi-0 {
+	cursor: inherit;
+}
+.VS_Sukutaulu__polvi-0.VS_Sukutaulu__heppainfo:hover {
+	background-color: transparent;
+}
 .VS_Sukutaulu__sukulainen {
   background-color: rgba(0, 100, 0, 0.15);
 }
@@ -429,6 +435,9 @@ hr{
 	margin-top: 16px;
 	border-top: 1px solid #eee;
 	font-size: 20px;
+}
+a.VS_Jalkelainen__listItem {
+	cursor: pointer;
 }
 
 
