@@ -19,7 +19,7 @@
 
 		//Tämän Heppa-olion luonti
 		$tama_heppa = new Heppa($haettu_tiedot, $haettu_suku);
-		$tama_heppa->hae_sukupolvet($db, $tama_heppa->suvun_pituus);
+		$tama_heppa->hae_sukupolvet($db, 4);
 
 		return $tama_heppa;
 	}
