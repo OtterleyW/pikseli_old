@@ -106,7 +106,7 @@ export class SukulainenUI extends Component {
     pituus: T.number.isRequired,
     jalkelaiset: T.array.isRequired,
     katsoHeppaa: T.func.isRequired
-  }
+  };
 
   render() {
     const {id} = this.props;
