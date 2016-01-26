@@ -1,4 +1,4 @@
-# pikseli
+# Pikseli
 
 Virtuaalihevosharrastukseen liittyviä omia harrastusprojekteja.
 
